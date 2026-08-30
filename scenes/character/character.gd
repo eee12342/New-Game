@@ -13,6 +13,10 @@ var in_colour_change_mode: bool = false
 
 
 func _physics_process(_delta: float) -> void:
+	var shift_held := Input.is_action_pressed("colour_change_mode")
+	if shift_held:
+		handle_colour()
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("left", "right", "up", "down")
@@ -29,7 +33,6 @@ func _physics_process(_delta: float) -> void:
 		in_colour_change_mode = false
 		
 	handle_rotation()
-	handle_colour()
 
 	move_and_slide()
 	
@@ -51,6 +54,5 @@ func handle_rotation() -> void:
 func handle_colour() -> void:
 	for colour in colours:
 		if Input.is_action_pressed(colour) and current_colour != colour:
-			print("change colour")
 			sprite.animation = colour
 			current_colour = colour
