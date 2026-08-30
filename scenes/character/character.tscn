@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dgnvd7x61fo5n"]
+
+[ext_resource type="Script" uid="uid://dmmxkkly0tovr" path="res://scenes/character/character.gd" id="1_cuyo6"]
+[ext_resource type="Texture2D" uid="uid://xb5n4088hw6r" path="res://icon.svg" id="2_mutn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(128, 128)
+
+[node name="Character" type="CharacterBody2D" unique_id=628092636]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_cuyo6")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1824989111]
+texture = ExtResource("2_mutn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=825170863]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="BulletSpawn" type="Marker2D" parent="." unique_id=19880142]
+position = Vector2(102, 0)
