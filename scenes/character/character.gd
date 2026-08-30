@@ -18,6 +18,7 @@ func _physics_process(_delta: float) -> void:
 		
 	if Input.is_action_just_pressed("fire"):
 		fire()
+	handle_rotation()
 
 	move_and_slide()
 	
@@ -26,5 +27,11 @@ func _physics_process(_delta: float) -> void:
 
 func fire() -> void:
 	var bullet = bullet_path.instantiate()
-	bullet.global_position = bullet_spawn.global_position
+	bullet.pos = bullet_spawn.global_position
+	bullet.dir = rotation
+	bullet.rot = global_rotation
 	get_parent().add_child(bullet)
+	
+
+func handle_rotation() -> void:
+	look_at(get_global_mouse_position())
