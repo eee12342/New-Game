@@ -50,7 +50,7 @@ func handle_rotation() -> void:
 
 func handle_colour() -> void:
 	for colour in colours:
-		if Input.is_action_just_pressed(colour) and current_colour != colour:
+		if Input.is_action_pressed(colour) and current_colour != colour:
 			print("change colour")
 			sprite.animation = colour
 			current_colour = colour
