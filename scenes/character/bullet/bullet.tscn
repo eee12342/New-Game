@@ -6,10 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(114, 12)
 
-[node name="Bullet" type="CharacterBody2D" unique_id=1838346968]
+[node name="Bullet" type="CharacterBody2D" unique_id=1838346968 groups=["player_projectiles"]]
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
-collision_mask = 0
+collision_mask = 4
 script = ExtResource("1_jxok7")
 speed = 1000
 
