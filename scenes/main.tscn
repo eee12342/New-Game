@@ -10,11 +10,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jyhfs"]
 shader = ExtResource("4_o6xl0")
-shader_parameter/opacity = 0.71999998390656
-shader_parameter/brightness_boost = 4.99999988824
-shader_parameter/saturation_boost = 2.999999932944
-shader_parameter/noise_scale = 6.819999851284679
-shader_parameter/noise_speed = 2.0
+shader_parameter/opacity = 0.72999998368304
+shader_parameter/brightness_boost = 4.52999989874544
+shader_parameter/saturation_boost = 2.13999995216672
+shader_parameter/noise_scale = 6.179999865589959
+shader_parameter/noise_speed = 1.230000058425
 shader_parameter/noise_direction = Vector2(1, 0.35)
 shader_parameter/noise_threshold = 0.52
 shader_parameter/noise_softness = 0.122000005795
