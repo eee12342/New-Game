@@ -27,7 +27,7 @@ shader_parameter/random_seed = 0.0
 shader_parameter/grid_size = Vector2(24, 14)
 shader_parameter/cell_offset = Vector2(0, 0)
 shader_parameter/movement_speed = Vector2(0, 0)
-shader_parameter/density = 0.5
+shader_parameter/density = 0.13999999687072
 shader_parameter/size_min = 0.1
 shader_parameter/size_max = 0.35
 shader_parameter/sprite_1_weight = 1.0
@@ -63,7 +63,7 @@ shader_parameter/distortion_speed = 0.062000002945
 [node name="Main" type="Node2D" unique_id=264343159]
 
 [node name="Character" parent="." unique_id=628092636 instance=ExtResource("1_o5qli")]
-scale = Vector2(1.25, 1.25)
+scale = Vector2(1, 1)
 speed = 450.0
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1966949581]
@@ -89,7 +89,6 @@ texture = ExtResource("5_tipki")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2129327935]
 
 [node name="Scatter" type="ColorRect" parent="CanvasLayer" unique_id=2070947465]
-visible = false
 material = SubResource("ShaderMaterial_x244a")
 offset_left = -20.0
 offset_right = 1189.0
