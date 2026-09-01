@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://li0veinl82tf"
-path="res://.godot/imported/OrangeFrameLight.png-61d40d307a72fe1088f9a9eb6a05b690.ctex"
+path="res://.godot/imported/OrangeFrameLight.png-666f585407a6dbff6169f406624e158a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Icon Art/OrangeFrameLight.png"
-dest_files=["res://.godot/imported/OrangeFrameLight.png-61d40d307a72fe1088f9a9eb6a05b690.ctex"]
+source_file="res://art/IconArt/OrangeFrameLight.png"
+dest_files=["res://.godot/imported/OrangeFrameLight.png-666f585407a6dbff6169f406624e158a.ctex"]
 
 [params]
 
