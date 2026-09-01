@@ -27,7 +27,11 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
-"res://art/": "red"
+"res://art/": "blue",
+"res://art/BackgroundArt/": "teal",
+"res://art/Icon Art/": "teal",
+"res://art/Shaders/": "teal",
+"res://art/WeaponArt/": "teal"
 }
 
 [global_group]
