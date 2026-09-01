@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc3jjthkyong1"
-path="res://.godot/imported/GalaxySkyALL.png-bb07ddd8be64e3ca576dae904e8ef5c6.ctex"
+uid="uid://cnxxlyg8vm7d"
+path="res://.godot/imported/GalaxySkyBG.png-0c68ad7b35f0f071820641dffd8cc1a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/BackgroundArt/GalaxySkyALL.png"
-dest_files=["res://.godot/imported/GalaxySkyALL.png-bb07ddd8be64e3ca576dae904e8ef5c6.ctex"]
+source_file="res://art/BackgroundArt/GalaxySkyBG.png"
+dest_files=["res://.godot/imported/GalaxySkyBG.png-0c68ad7b35f0f071820641dffd8cc1a5.ctex"]
 
 [params]
 
