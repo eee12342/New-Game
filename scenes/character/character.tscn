@@ -98,7 +98,7 @@ sprite_frames = SubResource("SpriteFrames_6nn2t")
 animation = &"colour1"
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite" unique_id=1284472976]
-energy = 2.75
+energy = 2.0
 texture = SubResource("GradientTexture2D_x244a")
 texture_scale = 0.25
 
