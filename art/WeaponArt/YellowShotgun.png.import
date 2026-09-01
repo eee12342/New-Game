@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtb6nju0esdtq"
-path="res://.godot/imported/PurpleSpear.png-a6e74d8f775d3889152b70a562ad221b.ctex"
+uid="uid://d30x0ppeni0cc"
+path="res://.godot/imported/YellowShotgun.png-45e8f3b78139931d80853e7a248b2120.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/WeaponArt/PurpleSpear.png"
-dest_files=["res://.godot/imported/PurpleSpear.png-a6e74d8f775d3889152b70a562ad221b.ctex"]
+source_file="res://art/WeaponArt/YellowShotgun.png"
+dest_files=["res://.godot/imported/YellowShotgun.png-45e8f3b78139931d80853e7a248b2120.ctex"]
 
 [params]
 

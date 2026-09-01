@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp2qr2wfrqr4r"
-path="res://.godot/imported/green.png-c0215af53fd939e2991f0bcf4e98ec9c.ctex"
+uid="uid://ca6vmo3bhx65f"
+path="res://.godot/imported/GreenBomb.png-d0f3bed9192d937b311878df13e72fa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Icon Art/green.png"
-dest_files=["res://.godot/imported/green.png-c0215af53fd939e2991f0bcf4e98ec9c.ctex"]
+source_file="res://art/WeaponArt/GreenBomb.png"
+dest_files=["res://.godot/imported/GreenBomb.png-d0f3bed9192d937b311878df13e72fa6.ctex"]
 
 [params]
 

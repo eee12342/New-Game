@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw7j308pwjdus"
-path="res://.godot/imported/BlueDisc.png-e5bf177631f085fae7b5f5953ac9a604.ctex"
+uid="uid://dufrn3f2hi2nc"
+path="res://.godot/imported/orange.png-cf47dcf3a971fe31decf23b964c9f0ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/WeaponArt/BlueDisc.png"
-dest_files=["res://.godot/imported/BlueDisc.png-e5bf177631f085fae7b5f5953ac9a604.ctex"]
+source_file="res://art/Icon Art/orange.png"
+dest_files=["res://.godot/imported/orange.png-cf47dcf3a971fe31decf23b964c9f0ad.ctex"]
 
 [params]
 

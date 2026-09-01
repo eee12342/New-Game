@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dufrn3f2hi2nc"
-path="res://.godot/imported/orange.png-c3084d539cff6676e19c7a44be1a80a8.ctex"
+uid="uid://t5gpjyq3drys"
+path="res://.godot/imported/GreenFrameLight.png-77a91bffb251917e72cfdaa9d8be9648.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Icon Art/orange.png"
-dest_files=["res://.godot/imported/orange.png-c3084d539cff6676e19c7a44be1a80a8.ctex"]
+source_file="res://art/Icon Art/GreenFrameLight.png"
+dest_files=["res://.godot/imported/GreenFrameLight.png-77a91bffb251917e72cfdaa9d8be9648.ctex"]
 
 [params]
 

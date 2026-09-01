@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dgnvd7x61fo5n" path="res://scenes/character/character.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://c7l0chwjkwn0j" path="res://scenes/enemy/enemy.tscn" id="2_0wfyh"]
-[ext_resource type="Shader" uid="uid://bsfsd20usidm7" path="res://scenes/Shaders/Scatter.gdshader" id="3_tbgi4"]
+[ext_resource type="Shader" uid="uid://bsfsd20usidm7" path="res://art/Shaders/Scatter.gdshader" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://cnxxlyg8vm7d" path="res://scenes/BackgroundArt/GalaxySkyBG.png" id="3_tefeu"]
-[ext_resource type="Shader" uid="uid://dr1dn77antlji" path="res://scenes/Shaders/Starlight.gdshader" id="4_o6xl0"]
+[ext_resource type="Shader" uid="uid://dr1dn77antlji" path="res://art/Shaders/Starlight.gdshader" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://ur7ubvhnxeom" path="res://scenes/BackgroundArt/GalaxySkySTARS.png" id="5_tipki"]
-[ext_resource type="Shader" uid="uid://1yuqc7tja416" path="res://scenes/Shaders/Smoke.gdshader" id="6_85g3d"]
+[ext_resource type="Shader" uid="uid://1yuqc7tja416" path="res://art/Shaders/Smoke.gdshader" id="6_85g3d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jyhfs"]
 shader = ExtResource("4_o6xl0")

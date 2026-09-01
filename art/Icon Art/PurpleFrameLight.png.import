@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca6vmo3bhx65f"
-path="res://.godot/imported/GreenBomb.png-2c4b0291d7d5f1285f0b4c3faf686cf9.ctex"
+uid="uid://c12rbqhtrcu5u"
+path="res://.godot/imported/PurpleFrameLight.png-4cd1a4b4d90fb3b97121804ba69f8a41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/WeaponArt/GreenBomb.png"
-dest_files=["res://.godot/imported/GreenBomb.png-2c4b0291d7d5f1285f0b4c3faf686cf9.ctex"]
+source_file="res://art/Icon Art/PurpleFrameLight.png"
+dest_files=["res://.godot/imported/PurpleFrameLight.png-4cd1a4b4d90fb3b97121804ba69f8a41.ctex"]
 
 [params]
 

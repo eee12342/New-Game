@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://dgnvd7x61fo5n"]
 
 [ext_resource type="Script" uid="uid://dmmxkkly0tovr" path="res://scenes/character/character.gd" id="1_cuyo6"]
-[ext_resource type="Texture2D" uid="uid://c4bqcuvgmlvn1" path="res://scenes/Icon Art/blue.png" id="2_f8hpl"]
-[ext_resource type="Texture2D" uid="uid://llirlgpsoswp" path="res://scenes/Icon Art/red.png" id="3_7ex5l"]
-[ext_resource type="Texture2D" uid="uid://d10j2825osysl" path="res://scenes/Icon Art/orange.png" id="4_bix7t"]
-[ext_resource type="Texture2D" uid="uid://cp2qr2wfrqr4r" path="res://scenes/Icon Art/green.png" id="5_bblvu"]
-[ext_resource type="Texture2D" uid="uid://c0phr42hxss5" path="res://scenes/Icon Art/frame.png" id="6_7ex5l"]
+[ext_resource type="Texture2D" uid="uid://c4bqcuvgmlvn1" path="res://art/Icon Art/blue.png" id="2_f8hpl"]
+[ext_resource type="Texture2D" uid="uid://llirlgpsoswp" path="res://art/Icon Art/red.png" id="3_7ex5l"]
+[ext_resource type="Texture2D" uid="uid://dufrn3f2hi2nc" path="res://art/Icon Art/orange.png" id="4_bix7t"]
+[ext_resource type="Texture2D" uid="uid://cp2qr2wfrqr4r" path="res://art/Icon Art/green.png" id="5_bblvu"]
+[ext_resource type="Texture2D" uid="uid://c0phr42hxss5" path="res://art/Icon Art/frame.png" id="6_7ex5l"]
 [ext_resource type="Script" uid="uid://cbiy5j51fp63y" path="res://scenes/character/frame.gd" id="7_bix7t"]
+[ext_resource type="Texture2D" uid="uid://t5gpjyq3drys" path="res://art/Icon Art/GreenFrameLight.png" id="8_0rlhq"]
+[ext_resource type="Texture2D" uid="uid://li0veinl82tf" path="res://art/Icon Art/OrangeFrameLight.png" id="9_oe6dy"]
+[ext_resource type="Texture2D" uid="uid://c12rbqhtrcu5u" path="res://art/Icon Art/PurpleFrameLight.png" id="10_cuvpk"]
+[ext_resource type="Texture2D" uid="uid://d05o1v2dj8m55" path="res://art/Icon Art/BlueFrameLight.png" id="11_rvcjf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cuyo6"]
 
@@ -124,6 +128,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 6.0
 initial_velocity_max = 8.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_c105b")
 hue_variation_min = -0.07
 hue_variation_max = 0.11
@@ -141,6 +147,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 6.0
 initial_velocity_max = 8.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_bblvu")
 hue_variation_min = -0.07
 hue_variation_max = 0.11
@@ -158,6 +166,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 6.0
 initial_velocity_max = 8.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_l884r")
 hue_variation_min = -0.07
 hue_variation_max = 0.11
@@ -175,6 +185,30 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 6.0
 initial_velocity_max = 8.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_oe6dy")
 hue_variation_min = -0.07
 hue_variation_max = 0.11
+
+[node name="Lights_Sprites" type="Node2D" parent="Frame" unique_id=531121767]
+
+[node name="GreenLight" type="Sprite2D" parent="Frame/Lights_Sprites" unique_id=1210939800]
+texture_filter = 1
+position = Vector2(0, 11)
+texture = ExtResource("8_0rlhq")
+
+[node name="OrangeLight" type="Sprite2D" parent="Frame/Lights_Sprites" unique_id=665233841]
+texture_filter = 1
+position = Vector2(11, 0)
+texture = ExtResource("9_oe6dy")
+
+[node name="PurpleLight" type="Sprite2D" parent="Frame/Lights_Sprites" unique_id=1397088873]
+texture_filter = 1
+position = Vector2(0, -11)
+texture = ExtResource("10_cuvpk")
+
+[node name="BlueLight" type="Sprite2D" parent="Frame/Lights_Sprites" unique_id=1975962908]
+texture_filter = 1
+position = Vector2(-11, 0)
+texture = ExtResource("11_rvcjf")
