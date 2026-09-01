@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0phr42hxss5"
-path="res://.godot/imported/frame.png-2039038b0e5502fcf4250f8a1b525dd8.ctex"
+uid="uid://c12rbqhtrcu5u"
+path="res://.godot/imported/PurpleFrameLight.png-4cd1a4b4d90fb3b97121804ba69f8a41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/IconArt/frame.png"
-dest_files=["res://.godot/imported/frame.png-2039038b0e5502fcf4250f8a1b525dd8.ctex"]
+source_file="res://art/Icon Art/PurpleFrameLight.png"
+dest_files=["res://.godot/imported/PurpleFrameLight.png-4cd1a4b4d90fb3b97121804ba69f8a41.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t5gpjyq3drys"
-path="res://.godot/imported/GreenFrameLight.png-1677f56c2640c8a522d035aaeb74088a.ctex"
+uid="uid://d05o1v2dj8m55"
+path="res://.godot/imported/BlueFrameLight.png-8bcdd087e5f787895a39e08d5b666631.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/IconArt/GreenFrameLight.png"
-dest_files=["res://.godot/imported/GreenFrameLight.png-1677f56c2640c8a522d035aaeb74088a.ctex"]
+source_file="res://art/Icon Art/BlueFrameLight.png"
+dest_files=["res://.godot/imported/BlueFrameLight.png-8bcdd087e5f787895a39e08d5b666631.ctex"]
 
 [params]
 
