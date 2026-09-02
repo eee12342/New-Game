@@ -6,6 +6,27 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jxok7"]
 radius = 8.0
 
+[sub_resource type="Curve" id="Curve_or75j"]
+_data = [Vector2(0.009803928, 0.99999994), 0.0, 0.0, 0, 0, Vector2(1, 0.48922408), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_cvtkw"]
+offsets = PackedFloat32Array(0.28289473, 1)
+colors = PackedColorArray(0.18039216, 0.6666667, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Curve" id="Curve_c105b"]
+_data = [Vector2(0, 0.86637926), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.40948272), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_or75j"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x244a"]
+gradient = SubResource("Gradient_or75j")
+fill = 1
+fill_from = Vector2(0.4722222, 0.50641024)
+fill_to = Vector2(0.8418803, 0.23717949)
+
 [node name="BulletBlue" type="CharacterBody2D" unique_id=1838346968 groups=["player_projectiles"]]
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
@@ -19,3 +40,49 @@ texture = ExtResource("2_vwar3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314644757]
 shape = SubResource("CircleShape2D_jxok7")
+
+[node name="Effects" type="Node2D" parent="." unique_id=1635015873]
+
+[node name="BlueParticles" type="CPUParticles2D" parent="Effects" unique_id=1178993438]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+texture_filter = 1
+amount = 24
+lifetime = 0.24000000000000002
+emission_shape = 1
+emission_sphere_radius = 12.46
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+scale_amount_min = 4.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_or75j")
+color_ramp = SubResource("Gradient_cvtkw")
+hue_variation_min = -0.07
+hue_variation_max = 0.11
+
+[node name="BlueDiscTrail" type="CPUParticles2D" parent="Effects" unique_id=536798885]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+texture_filter = 1
+texture = ExtResource("2_vwar3")
+lifetime = 0.16
+emission_shape = 1
+emission_sphere_radius = 3.1
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_c105b")
+hue_variation_min = -0.07
+hue_variation_max = 0.11
+
+[node name="Glow" type="PointLight2D" parent="Effects" unique_id=2010022677]
+energy = 1.69
+texture = ExtResource("2_vwar3")
+
+[node name="AreaLight" type="PointLight2D" parent="Effects" unique_id=787499222]
+texture = SubResource("GradientTexture2D_x244a")
+texture_scale = 0.6

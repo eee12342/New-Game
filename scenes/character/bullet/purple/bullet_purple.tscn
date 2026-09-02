@@ -6,8 +6,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6tuy"]
 size = Vector2(40.000004, 6.666667)
 
+[sub_resource type="Curve" id="Curve_cjnjl"]
+_data = [Vector2(0.009803928, 0.99999994), 0.0, 0.0, 0, 0, Vector2(1, 0.48922408), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_axnbm"]
+offsets = PackedFloat32Array(0.13377193, 1)
+colors = PackedColorArray(8.795797, 1.2410065, 9.623228, 0.07450981, 0, 0, 0, 0)
+
 [node name="BulletPurple" type="CharacterBody2D" unique_id=1838346968 groups=["player_projectiles"]]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_cjnjl")
@@ -24,5 +32,33 @@ texture = ExtResource("2_axnbm")
 
 [node name="Delay" type="Timer" parent="." unique_id=1543084004]
 one_shot = true
+
+[node name="Effects" type="Node2D" parent="." unique_id=356769769]
+
+[node name="Glow" type="PointLight2D" parent="Effects" unique_id=357304200]
+rotation = 1.5707964
+energy = 1.34
+texture = ExtResource("2_axnbm")
+
+[node name="PurpleParticles" type="CPUParticles2D" parent="Effects" unique_id=165581002]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+texture_filter = 1
+position = Vector2(7, 0)
+scale = Vector2(1.186668, 0.20666729)
+amount = 24
+lifetime = 0.24000000000000002
+emission_shape = 1
+emission_sphere_radius = 12.46
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_cjnjl")
+color_ramp = SubResource("Gradient_axnbm")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
 
 [connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
