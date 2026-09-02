@@ -12,8 +12,9 @@ func setup(chrg_time: float) -> void:
 	if chrg_time > MAX_CHARGE_TIME:
 		chrg_time = MAX_CHARGE_TIME
 	
-	amplitude *= (chrg_time / 200 + 1)
-	scale = Vector2(scale.x * (chrg_time / 1000) + 1, scale.y * (chrg_time / 1000) + 1)
+	amplitude *= (chrg_time / 100 + 1)
+	frequency *= (chrg_time / 1000 + 1)
+	scale = Vector2(scale.x * (chrg_time / 1000) + 1.5, scale.y * (chrg_time / 1000) + 1.5)
 	if scale < Vector2.ONE:
 		scale = Vector2.ONE
 

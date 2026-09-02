@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bb438mumf2p81"]
+
+[ext_resource type="Script" uid="uid://dh74mvf4yuyes" path="res://scenes/character/bullet/purple/bullet_purple.gd" id="1_cjnjl"]
+[ext_resource type="Texture2D" uid="uid://dtb6nju0esdtq" path="res://art/WeaponArt/PurpleSpear.png" id="2_axnbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6tuy"]
+size = Vector2(40.000004, 6.666667)
+
+[node name="BulletPurple" type="CharacterBody2D" unique_id=1838346968 groups=["player_projectiles"]]
+scale = Vector2(1.5, 1.5)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_cjnjl")
+speed = 1500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314644757]
+position = Vector2(1.3333321, 5.9604645e-08)
+shape = SubResource("RectangleShape2D_y6tuy")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=537784310]
+texture_filter = 1
+rotation = 1.5707964
+texture = ExtResource("2_axnbm")
+
+[node name="Delay" type="Timer" parent="." unique_id=1543084004]
+one_shot = true
+
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

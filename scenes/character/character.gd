@@ -4,8 +4,10 @@ class_name Player
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 var bullet_blue := preload("res://scenes/character/bullet/blue/bulletblue.tscn")
+var bullet_purple := preload("res://scenes/character/bullet/purple/bullet_purple.tscn")
 var bullet_paths = {
-	"colour1": bullet_blue
+	"colour1": bullet_blue,
+	"colour2": bullet_purple
 }
 @onready var bullet_spawn: Marker2D = $BulletSpawn
 var charge_started_time: float
