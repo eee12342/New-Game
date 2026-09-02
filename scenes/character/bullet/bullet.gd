@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Bullet
 
 
 @export var speed := 600
@@ -12,10 +13,14 @@ func _ready() -> void:
 	global_rotation = rot
 
 
-func _physics_process(_delta: float) -> void:
-	velocity = Vector2(speed, 0).rotated(dir)
+func _physics_process(delta: float) -> void:
+	velocity = move(delta)
 	move_and_slide()
-	
+
+
+func move(_delta: float):
+	return Vector2(speed, 0).rotated(dir)
+
 
 func begone() -> void:
 	pass

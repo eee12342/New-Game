@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5mi0ep2gufyn"]
 
-[ext_resource type="Script" uid="uid://c3552kd04c7x4" path="res://scenes/character/bullet/bullet.gd" id="1_jxok7"]
-[ext_resource type="Texture2D" uid="uid://dw7j308pwjdus" path="res://art/WeaponArt/BlueDisc.png" id="2_jxok7"]
+[ext_resource type="Script" uid="uid://360g1jas3y3j" path="res://scenes/character/bullet/blue/bulletblue.gd" id="1_or75j"]
+[ext_resource type="Texture2D" uid="uid://dw7j308pwjdus" path="res://art/WeaponArt/BlueDisc.png" id="2_vwar3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jxok7"]
 radius = 8.0
@@ -10,11 +10,11 @@ radius = 8.0
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("1_jxok7")
+script = ExtResource("1_or75j")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=537784310]
 texture_filter = 1
-texture = ExtResource("2_jxok7")
+texture = ExtResource("2_vwar3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314644757]
 shape = SubResource("CircleShape2D_jxok7")

@@ -3,7 +3,7 @@ class_name Player
 
 
 @onready var sprite: AnimatedSprite2D = $Sprite
-var bullet_path := preload("res://scenes/character/bullet/bullet.tscn")
+var bullet_path := preload("res://scenes/character/bullet/blue/bulletblue.tscn")
 @onready var bullet_spawn: Marker2D = $BulletSpawn
 
 @export var speed := 300.0
