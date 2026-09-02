@@ -13,6 +13,10 @@ func _ready() -> void:
 	global_rotation = rot
 
 
+func setup(_charge_time: float) -> void:
+	pass
+
+
 func _physics_process(delta: float) -> void:
 	velocity = move(delta)
 	move_and_slide()

@@ -3,8 +3,12 @@ class_name Player
 
 
 @onready var sprite: AnimatedSprite2D = $Sprite
-var bullet_path := preload("res://scenes/character/bullet/blue/bulletblue.tscn")
+var bullet_blue := preload("res://scenes/character/bullet/blue/bulletblue.tscn")
+var bullet_paths = {
+	"colour1": bullet_blue
+}
 @onready var bullet_spawn: Marker2D = $BulletSpawn
+var charge_started_time: float
 
 @export var speed := 300.0
 
@@ -26,8 +30,12 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity = Vector2(0, 0)
 		
-	if Input.is_action_just_pressed("fire"):
-		fire()
+	if Input.is_action_pressed("fire") and not charge_started_time:
+		charge_started_time = Time.get_ticks_msec()
+	if Input.is_action_just_released("fire"):
+		var charge_time = Time.get_ticks_msec() - charge_started_time
+		fire(charge_time)
+		charge_started_time = 0
 	if Input.is_action_pressed("colour_change_mode"):
 		in_colour_change_mode = true
 	else:
@@ -40,12 +48,15 @@ func _physics_process(_delta: float) -> void:
 # TODO: improve movement (make more floaty, add accel/decell properties
 
 
-func fire() -> void:
-	var bullet = bullet_path.instantiate()
-	bullet.pos = bullet_spawn.global_position
-	bullet.dir = rotation
-	bullet.rot = global_rotation
-	get_parent().add_child(bullet)
+func fire(chrg_time: float = 100) -> void:
+	var bullet_path = bullet_paths.get(current_colour)
+	if bullet_path:
+		var bullet = bullet_path.instantiate()
+		bullet.pos = bullet_spawn.global_position
+		bullet.dir = rotation
+		bullet.rot = global_rotation
+		bullet.setup(chrg_time)
+		get_parent().add_child(bullet)
 	
 
 func handle_rotation() -> void:
