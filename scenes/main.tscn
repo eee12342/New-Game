@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c7l0chwjkwn0j" path="res://scenes/enemy/enemy1.tscn" id="2_0wfyh"]
 [ext_resource type="Shader" uid="uid://bsfsd20usidm7" path="res://art/Shaders/Scatter.gdshader" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://cnxxlyg8vm7d" path="res://art/BackgroundArt/GalaxySkyBG.png" id="3_tefeu"]
-[ext_resource type="PackedScene" uid="uid://dwvrguprlab33" path="res://scenes/enemy/enemy2.tscn" id="3_tipki"]
 [ext_resource type="Shader" uid="uid://dr1dn77antlji" path="res://art/Shaders/Starlight.gdshader" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://ur7ubvhnxeom" path="res://art/BackgroundArt/GalaxySkySTARS.png" id="5_tipki"]
 [ext_resource type="Shader" uid="uid://1yuqc7tja416" path="res://art/Shaders/Smoke.gdshader" id="6_85g3d"]
@@ -68,18 +67,14 @@ glow_enabled = true
 
 [node name="Character" parent="." unique_id=628092636 instance=ExtResource("1_o5qli")]
 z_index = 1
-position = Vector2(400, 300)
-scale = Vector2(1, 1)
+position = Vector2(476, 312)
 speed = 450.0
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1966949581]
 z_index = 1
 
 [node name="Enemy" parent="Enemies" unique_id=243331702 instance=ExtResource("2_0wfyh")]
-position = Vector2(914, 246)
-
-[node name="Enemy2" parent="Enemies" unique_id=1620255329 instance=ExtResource("3_tipki")]
-position = Vector2(911.00006, 338)
+position = Vector2(915, 246)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=170960402]
 z_index = -1

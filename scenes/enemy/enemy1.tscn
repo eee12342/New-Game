@@ -29,7 +29,7 @@ offsets = PackedFloat32Array(0.0065789474, 0.20833333, 0.4473684, 0.7017544, 1)
 colors = PackedColorArray(0.4862745, 0.08235294, 0.043137256, 1, 1, 0.08235294, 0.043137256, 1, 0.9019608, 0.3882353, 0.17254902, 1, 0.9019608, 0.6862745, 0.07450981, 1, 0.9019608, 0.6862745, 0.07450981, 0)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=243331702]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_a3pup")

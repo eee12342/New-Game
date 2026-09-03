@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d05o1v2dj8m55" path="res://art/Icon Art/BlueFrameLight.png" id="11_rvcjf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cuyo6"]
+radius = 5.2070255
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6nn2t"]
 animations = [{
@@ -84,7 +85,7 @@ offsets = PackedFloat32Array(0.12719299, 0.9930796)
 colors = PackedColorArray(0.30980393, 1, 0.14509805, 1, 1, 1, 1, 0)
 
 [node name="Character" type="CharacterBody2D" unique_id=628092636]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2, 2)
 collision_mask = 5
 script = ExtResource("1_cuyo6")
 
@@ -93,12 +94,11 @@ scale = Vector2(2.526, 2.526)
 shape = SubResource("CircleShape2D_cuyo6")
 
 [node name="BulletSpawn" type="Marker2D" parent="." unique_id=19880142]
-position = Vector2(40, 0)
+position = Vector2(22.5, 0)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=28061310]
 texture_filter = 1
 rotation = 1.5707964
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6nn2t")
 animation = &"colour1"
 
@@ -109,7 +109,6 @@ texture_scale = 0.25
 
 [node name="Frame" type="Sprite2D" parent="." unique_id=1473596807]
 texture_filter = 1
-scale = Vector2(2, 2)
 texture = ExtResource("6_7ex5l")
 script = ExtResource("7_bix7t")
 

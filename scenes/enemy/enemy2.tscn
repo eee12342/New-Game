@@ -29,7 +29,7 @@ offsets = PackedFloat32Array(0.0065789474, 0.20833333, 0.4473684, 0.7017544, 1)
 colors = PackedColorArray(0.4862745, 0.08235294, 0.043137256, 1, 1, 0.08235294, 0.043137256, 1, 0.9019608, 0.3882353, 0.17254902, 1, 0.9019608, 0.6862745, 0.07450981, 1, 0.9019608, 0.6862745, 0.07450981, 0)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=243331702]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_dhsvk")
@@ -40,6 +40,7 @@ position = Vector2(0, -0.5)
 texture = ExtResource("2_dhsvk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559677973]
+visible = false
 position = Vector2(6, -0.6666666)
 scale = Vector2(1, 1.2)
 shape = SubResource("CircleShape2D_o6xl0")
@@ -47,6 +48,7 @@ shape = SubResource("CircleShape2D_o6xl0")
 [node name="Hitbox" type="Area2D" parent="." unique_id=839653704 groups=["player_projectiles"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1732069315]
+visible = false
 position = Vector2(6, -0.6666667)
 scale = Vector2(1, 1.2)
 shape = SubResource("CircleShape2D_tipki")
@@ -76,17 +78,17 @@ texture_scale = 0.2
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Visuals" unique_id=424873748]
 z_index = -1
-position = Vector2(6.0000005, -1.3333334)
-amount = 40
+position = Vector2(7, -1.5)
+amount = 50
 lifetime = 0.3
 emission_shape = 1
-emission_sphere_radius = 12.03
+emission_sphere_radius = 11.07
 spread = 19.47
 gravity = Vector2(300, 0)
 initial_velocity_min = 74.63
 initial_velocity_max = 74.63
-scale_amount_min = 6.0
-scale_amount_max = 8.0
+scale_amount_min = 8.0
+scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_n0f10")
 color_ramp = SubResource("Gradient_gwnwj")
 
