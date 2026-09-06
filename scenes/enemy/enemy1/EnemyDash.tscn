@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://capiq235rrs80"]
+
+[ext_resource type="Texture2D" uid="uid://56ud2jut254u" path="res://art/UI/ArrowBottom.png" id="1_i02bk"]
+[ext_resource type="Texture2D" uid="uid://m5gyc7ndn0mr" path="res://art/UI/ArrowTop.png" id="2_0orfb"]
+
+[node name="EnemyDash" type="Node2D" unique_id=1323345062]
+
+[node name="ArrowProgress" type="TextureProgressBar" parent="." unique_id=1700091343]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+value = 10.0
+texture_under = ExtResource("1_i02bk")
+texture_progress = ExtResource("2_0orfb")
