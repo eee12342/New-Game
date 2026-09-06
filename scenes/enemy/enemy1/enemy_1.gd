@@ -1,18 +1,30 @@
 extends Enemy
 
 
-var finding_player: bool
+@onready var pause_timer: Timer = $Pause
+
+var finding_player: bool = false
+var paused: bool = false
+var target: float
 
 
 func _process(_delta: float) -> void:
-	find_player()
+	print(target)
+	if not finding_player:
+		find_player()
+	else:
+		if global_rotation == target:
+			paused = true
+			finding_player = false
 
 
 func find_player():
 	finding_player = true
-	var point = get_angle_to(player.global_position)
+	target = get_angle_to(player.global_position)
 	var tween = create_tween()
-	var time_spent = abs(rotation_degrees - point) / 100
-	tween.tween_property(self, "rotation_degrees", point, time_spent)
+	tween.tween_property(self, "global_rotation", target, 2)
 	rotation_degrees += 180
-	await tween.finished
+
+
+func _on_pause_timeout() -> void:
+	pass

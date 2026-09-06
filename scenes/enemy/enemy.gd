@@ -27,7 +27,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		
 func check_dead() -> void:
 	if health <= 0:
-		visible = false
+		queue_free()
 
 
 func _on_damaged(damage: float, body: CharacterBody2D):

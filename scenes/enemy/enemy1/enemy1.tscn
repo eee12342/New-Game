@@ -39,7 +39,7 @@ position = Vector2(0, -0.5)
 texture = ExtResource("2_a3pup")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559677973]
-position = Vector2(2, 0)
+position = Vector2(1.5, 0)
 scale = Vector2(1, 1.2)
 shape = SubResource("CircleShape2D_o6xl0")
 
@@ -78,4 +78,9 @@ scale_amount_max = 6.0
 scale_amount_curve = SubResource("Curve_n0f10")
 color_ramp = SubResource("Gradient_gwnwj")
 
+[node name="Pause" type="Timer" parent="." unique_id=14633251]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="Pause" to="." method="_on_pause_timeout"]
