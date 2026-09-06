@@ -32,6 +32,7 @@ folder_colors={
 "res://art/EnemyArt/": "teal",
 "res://art/Icon Art/": "teal",
 "res://art/Shaders/": "teal",
+"res://art/UI/": "teal",
 "res://art/WeaponArt/": "teal"
 }
 
