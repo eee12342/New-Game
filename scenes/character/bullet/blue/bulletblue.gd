@@ -2,7 +2,8 @@ extends Bullet
 
 
 @export var frequency: float = 10
-@export var amplitude: float = 20
+@export var amplitude: float = 25
+@export var bullet_damage: float = 20
 var time_passed: float = 0
 
 const MAX_CHARGE_TIME: float = 1000
@@ -12,9 +13,12 @@ func setup(chrg_time: float) -> void:
 	if chrg_time > MAX_CHARGE_TIME:
 		chrg_time = MAX_CHARGE_TIME
 	
-	amplitude *= (chrg_time / 100 + 1)
-	frequency *= (chrg_time / 1000 + 1)
-	scale = Vector2(scale.x * (chrg_time / 800) + 1.5, scale.y * (chrg_time / 800) + 1.5)
+	damage = bullet_damage
+	damage *= (chrg_time / 1000 + 1)
+	print(damage)
+	amplitude *= (chrg_time / 1000 + 1)
+	frequency *= (chrg_time / 200 + 1)
+	scale = Vector2(scale.x * (chrg_time / 600) + 1.5, scale.y * (chrg_time / 600) + 1.5)
 	if scale < Vector2.ONE:
 		scale = Vector2.ONE
 

@@ -9,7 +9,7 @@ var bullet_paths = {
 	"colour1": bullet_blue,
 	"colour2": bullet_purple
 }
-@onready var bullet_spawn: Marker2D = $BulletSpawn
+@onready var bullet_spawn: Marker2D = $BulletSpawns/BulletSpawn
 var charge_started_time: float
 
 @export var speed := 300.0
@@ -17,6 +17,10 @@ var charge_started_time: float
 var colours: Array = ["colour1", "colour2", "colour3", "colour4"]
 var current_colour: String = "colour1"
 var in_colour_change_mode: bool = false
+
+
+func _ready() -> void:
+	Messenger.Player = self
 
 
 func _physics_process(_delta: float) -> void:

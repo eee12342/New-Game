@@ -17,7 +17,7 @@ colors = PackedColorArray(8.795797, 1.2410065, 9.623228, 0.07450981, 0, 0, 0, 0)
 [node name="BulletPurple" type="CharacterBody2D" unique_id=1838346968 groups=["player_projectiles"]]
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 4
+collision_mask = 0
 script = ExtResource("1_cjnjl")
 speed = 1500
 
@@ -31,7 +31,7 @@ position = Vector2(22, 9.536743e-07)
 rotation = 1.5707964
 texture = ExtResource("2_axnbm")
 
-[node name="Delay" type="Timer" parent="." unique_id=1543084004]
+[node name="Delay" type="Timer" parent="." unique_id=1543084004 groups=["player_projectiles"]]
 wait_time = 2.0
 one_shot = true
 

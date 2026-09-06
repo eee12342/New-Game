@@ -1,14 +1,35 @@
 extends CharacterBody2D
+class_name Enemy
 
 
 @export var speed: float = 300.0
 @export var max_health: float = 100.0
 
+var player: CharacterBody2D
+var health := max_health
+
+
+func _ready() -> void:
+	player = Messenger.Player
+	Messenger.connect("damage_to_enemy", _on_damaged)
+
 
 func _physics_process(_delta: float) -> void:
+	check_dead()
 	move_and_slide()
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_projectiles"):
 		print("I've been hit!")
+		Messenger.enemy_hit(body, self)
+		
+		
+func check_dead() -> void:
+	if health <= 0:
+		visible = false
+
+
+func _on_damaged(damage: float, body: CharacterBody2D):
+	if body == self:
+		health -= damage

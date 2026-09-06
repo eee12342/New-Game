@@ -3,12 +3,14 @@ class_name Bullet
 
 
 @export var speed := 600
+@export var damage: float = 20
 var pos: Vector2
 var rot: float
 var dir: float
 
 
 func _ready() -> void:
+	Messenger.connect("enemy_is_hit", _on_enemy_hit)
 	global_position = pos
 	global_rotation = rot
 
@@ -27,4 +29,9 @@ func move(_delta: float):
 
 
 func begone() -> void:
-	pass
+	queue_free()
+
+
+func _on_enemy_hit(projectile: CharacterBody2D, enemy: CharacterBody2D):
+	if projectile == self:
+		Messenger.damage_enemy(damage, enemy)

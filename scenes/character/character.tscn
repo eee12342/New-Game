@@ -93,9 +93,6 @@ script = ExtResource("1_cuyo6")
 scale = Vector2(2.526, 2.526)
 shape = SubResource("CircleShape2D_cuyo6")
 
-[node name="BulletSpawn" type="Marker2D" parent="." unique_id=19880142]
-position = Vector2(22.5, 0)
-
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=28061310]
 texture_filter = 1
 rotation = 1.5707964
@@ -212,3 +209,14 @@ texture = ExtResource("10_cuvpk")
 texture_filter = 1
 position = Vector2(-11, 0)
 texture = ExtResource("11_rvcjf")
+
+[node name="BulletSpawns" type="Node2D" parent="." unique_id=1060247796]
+
+[node name="BulletSpawn" type="Marker2D" parent="BulletSpawns" unique_id=19880142]
+position = Vector2(22.5, 0)
+
+[node name="BulletSpawn2" type="Marker2D" parent="BulletSpawns" unique_id=364683982]
+position = Vector2(22.5, -10)
+
+[node name="BulletSpawn3" type="Marker2D" parent="BulletSpawns" unique_id=962749999]
+position = Vector2(22.5, 10)
