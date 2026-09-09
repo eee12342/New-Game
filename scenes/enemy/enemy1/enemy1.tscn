@@ -81,7 +81,7 @@ scale_amount_curve = SubResource("Curve_n0f10")
 color_ramp = SubResource("Gradient_gwnwj")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1293576095]
-target_position = Vector2(200, 0)
+target_position = Vector2(300, 0)
 
 [node name="Pause" type="Timer" parent="." unique_id=14633251]
 wait_time = 2.0
