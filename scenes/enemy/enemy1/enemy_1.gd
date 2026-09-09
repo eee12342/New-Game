@@ -82,6 +82,7 @@ func attack_finished():
 
 func check_dead() -> void:
 	if health <= 0:
+		charge_progress.visible = false
 		death_tween()
 		super()
 		

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://capiq235rrs80"]
 
-[ext_resource type="Texture2D" uid="uid://56ud2jut254u" path="res://art/UI/ArrowBottom.png" id="1_i02bk"]
+[ext_resource type="Texture2D" uid="uid://56ud2jut254u" path="res://art/Shaders/ArrowBottom.png" id="1_i02bk"]
 [ext_resource type="Texture2D" uid="uid://m5gyc7ndn0mr" path="res://art/UI/ArrowTop.png" id="2_0orfb"]
 
 [node name="EnemyDash" type="Node2D" unique_id=1323345062]
