@@ -35,8 +35,9 @@ script = ExtResource("1_mywme")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=603739376]
 texture_filter = 1
-position = Vector2(0, -0.5)
+position = Vector2(3.5, -0.5)
 texture = ExtResource("2_a3pup")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559677973]
 position = Vector2(1.5, 0)
@@ -54,6 +55,7 @@ scale = Vector2(1, 1.2)
 shape = SubResource("CircleShape2D_tipki")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=1174103694]
+rotation = 3.1415927
 
 [node name="EyeLight" type="PointLight2D" parent="Visuals" unique_id=427485426]
 position = Vector2(-4, 0)
