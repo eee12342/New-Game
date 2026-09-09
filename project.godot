@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ColorSwap"
-run/main_scene="uid://dctqyiq4smcbi"
+run/main_scene="uid://bua2wbe6dvom7"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

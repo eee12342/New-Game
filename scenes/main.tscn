@@ -28,6 +28,10 @@ shader_parameter/grid_size = Vector2(24, 14)
 shader_parameter/cell_offset = Vector2(0, 0)
 shader_parameter/movement_speed = Vector2(0, 0)
 shader_parameter/density = 0.13999999687072
+shader_parameter/drift_amount_min = 0.01
+shader_parameter/drift_amount_max = 0.06
+shader_parameter/drift_speed_min = 0.15
+shader_parameter/drift_speed_max = 0.5
 shader_parameter/size_min = 0.1
 shader_parameter/size_max = 0.35
 shader_parameter/sprite_1_weight = 1.0
@@ -106,6 +110,7 @@ offset_left = -44.0
 offset_top = -24.0
 offset_right = 1204.0
 offset_bottom = 665.0
+metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1742732268]
 environment = SubResource("Environment_c105b")
