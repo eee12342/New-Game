@@ -3,9 +3,11 @@ extends Enemy
 
 @export var rotation_speed_seconds: float = 2
 
+@onready var animation_player: AnimatedSprite2D = $AnimatedSprite2D
 @onready var pause_timer: Timer = $Pause
 @onready var raycast: RayCast2D = $RayCast2D
 
+var dying: bool = false
 var finding_player: bool = false
 var paused: bool = false
 var target: float
@@ -44,3 +46,10 @@ func attack():
 	
 func attack_finished():
 	finding_player = false
+	
+func check_dead() -> void:
+	if health <= 0 and not dying:
+		dying = true
+		animation_player.play("Explosion")
+		await animation_player.animation_finished
+		queue_free()
