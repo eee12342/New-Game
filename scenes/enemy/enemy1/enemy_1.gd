@@ -1,7 +1,7 @@
 extends Enemy
 
 
-@export var rotation_speed_seconds: float = 1
+@export var rotation_speed_seconds: float = 0.5
 
 @onready var pause_timer: Timer = $Pause
 @onready var raycast: RayCast2D = $RayCast2D
@@ -19,10 +19,14 @@ var charge_tween: Tween
 var tweens: Array
 
 
+func _ready() -> void:
+	tweens = [momentum_tween, attack_tween, tween, charge_tween]
+	super()
+
+
 func _process(_delta: float) -> void:
 	if not finding_player:
 		find_player()
-	tweens = [momentum_tween, attack_tween, tween, charge_tween]
 	
 
 func find_player():
@@ -42,7 +46,6 @@ func find_player():
 
 
 func _on_pause_timeout() -> void:
-	finding_player = false
 	attack()
 	
 	
@@ -51,8 +54,8 @@ func start_attack():
 	charge_progress.visible = true
 	charge_tween = create_tween()
 	charge_tween.set_ease(Tween.EASE_IN)
-	charge_tween.set_trans(Tween.TRANS_BOUNCE)
-	charge_tween.tween_property(charge_progress, "value", 100, 1.5)
+	charge_tween.set_trans(Tween.TRANS_CUBIC)
+	charge_tween.tween_property(charge_progress, "value", 100, 1)
 
 
 func attack():
@@ -72,6 +75,7 @@ func attack():
 	
 func attack_finished():
 	finding_player = false
+	charge_tween.kill()
 	
 
 func check_dead() -> void:

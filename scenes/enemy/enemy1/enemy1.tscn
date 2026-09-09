@@ -161,7 +161,6 @@ color_ramp = SubResource("Gradient_gwnwj")
 target_position = Vector2(300, 0)
 
 [node name="Pause" type="Timer" parent="." unique_id=14633251]
-wait_time = 1.5
 one_shot = true
 
 [node name="ArrowProgress" parent="." unique_id=1109070990 instance=ExtResource("4_hddgn")]
