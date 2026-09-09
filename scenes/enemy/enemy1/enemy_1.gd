@@ -33,5 +33,7 @@ func _on_pause_timeout() -> void:
 	
 func attack():
 	var attack_tween = create_tween()
+	attack_tween.set_ease(Tween.EASE_IN_OUT)
+	attack_tween.set_trans(Tween.TRANS_CUBIC)
 	attack_tween.tween_property(self, "global_position", to_global(raycast.target_position), 1)
 	attack_tween.finished.connect(func(): pause_timer.start())
