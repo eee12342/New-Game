@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://djp87qcu7vd6o"]
+
+[ext_resource type="Texture2D" uid="uid://56ud2jut254u" path="res://art/UI/ArrowBottom.png" id="1_ykxqu"]
+[ext_resource type="Texture2D" uid="uid://m5gyc7ndn0mr" path="res://art/UI/ArrowTop.png" id="2_onohu"]
+
+[node name="ArrowProgress" type="TextureProgressBar" unique_id=1109070990]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+value = 10.0
+texture_under = ExtResource("1_ykxqu")
+texture_progress = ExtResource("2_onohu")

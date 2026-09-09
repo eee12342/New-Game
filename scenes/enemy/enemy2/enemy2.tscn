@@ -37,6 +37,7 @@ script = ExtResource("1_dhsvk")
 texture_filter = 1
 position = Vector2(0, -0.5)
 texture = ExtResource("2_dhsvk")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559677973]
 visible = false
@@ -45,14 +46,16 @@ scale = Vector2(1, 1.2)
 shape = SubResource("CircleShape2D_o6xl0")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=839653704 groups=["player_projectiles"]]
+position = Vector2(-13.5, -0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1732069315]
-visible = false
 position = Vector2(6, -0.6666667)
 scale = Vector2(1, 1.2)
 shape = SubResource("CircleShape2D_tipki")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=1174103694]
+position = Vector2(-10, 0)
+rotation = 3.1415927
 
 [node name="EyeLight" type="PointLight2D" parent="Visuals" unique_id=427485426]
 position = Vector2(1.3333335, -1.3333334)

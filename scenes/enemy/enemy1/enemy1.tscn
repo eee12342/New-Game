@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://do52j6cw47w2k" path="res://scenes/enemy/enemy1/enemy_1.gd" id="1_mywme"]
 [ext_resource type="Texture2D" uid="uid://dpcodqu5fbvf" path="res://art/EnemyArt/ShitterEnemy.png" id="2_a3pup"]
 [ext_resource type="Texture2D" uid="uid://cq6o3phc5pem0" path="res://art/SpecialEffects/SmallExplosion.png" id="3_dfp62"]
+[ext_resource type="PackedScene" uid="uid://djp87qcu7vd6o" path="res://scenes/enemy/enemy1/dashbar.tscn" id="4_hddgn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfp62"]
 atlas = ExtResource("3_dfp62")
@@ -160,8 +161,18 @@ color_ramp = SubResource("Gradient_gwnwj")
 target_position = Vector2(300, 0)
 
 [node name="Pause" type="Timer" parent="." unique_id=14633251]
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
+
+[node name="ArrowProgress" parent="." unique_id=1109070990 instance=ExtResource("4_hddgn")]
+visible = false
+z_index = -1
+offset_left = 7.0
+offset_top = -8.0
+offset_right = 127.0
+offset_bottom = 32.0
+scale = Vector2(2.5, 1)
+value = 0.0
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="Pause" to="." method="_on_pause_timeout"]
