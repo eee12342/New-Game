@@ -71,7 +71,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_a3pup")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Default",
 "speed": 5.0
 }]
@@ -111,9 +111,8 @@ animations = NodePath("Animations")
 modulate = Color(0.8586687, 0.8586687, 0.8586687, 1)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c105b")
-animation = &"Death"
-frame = 7
-frame_progress = 1.0
+animation = &"Default"
+autoplay = "Default"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559677973]
