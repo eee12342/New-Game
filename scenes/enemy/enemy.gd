@@ -10,6 +10,7 @@ var player: CharacterBody2D
 var health := max_health
 var damage: float = 35
 var damage_tween: Tween
+var random = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
@@ -40,8 +41,8 @@ func _on_damaged(damage_taken: float, body: CharacterBody2D):
 		health -= damage_taken
 		
 		damage_tween = create_tween()
-		damage_tween.tween_property(self, "modulate", Color(18.892, 18.892, 18.892), 0.25)
-		damage_tween.tween_property(self, "modulate", Color("#ffffff"), 0.25)
+		damage_tween.tween_property(self, "modulate", Color(18.892, 18.892, 18.892), 0.15)
+		damage_tween.tween_property(self, "modulate", Color("#ffffff"), 0.15)
 		
 		
 func _on_death_finished():

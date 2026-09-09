@@ -80,6 +80,21 @@ z_index = 1
 [node name="Enemy" parent="Enemies" unique_id=243331702 groups=["enemies"] instance=ExtResource("2_0wfyh")]
 position = Vector2(915, 246)
 
+[node name="Enemy2" parent="Enemies" unique_id=990959022 groups=["enemies"] instance=ExtResource("2_0wfyh")]
+position = Vector2(65, 65)
+
+[node name="Enemy3" parent="Enemies" unique_id=734930953 groups=["enemies"] instance=ExtResource("2_0wfyh")]
+position = Vector2(541, 100)
+
+[node name="Enemy4" parent="Enemies" unique_id=1238650369 groups=["enemies"] instance=ExtResource("2_0wfyh")]
+position = Vector2(186, 402)
+
+[node name="Enemy5" parent="Enemies" unique_id=638558253 groups=["enemies"] instance=ExtResource("2_0wfyh")]
+position = Vector2(581, 430)
+
+[node name="Enemy6" parent="Enemies" unique_id=1046377810 groups=["enemies"] instance=ExtResource("2_0wfyh")]
+position = Vector2(937, 353)
+
 [node name="Background" type="Sprite2D" parent="." unique_id=170960402]
 z_index = -1
 texture_filter = 1

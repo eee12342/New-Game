@@ -48,16 +48,17 @@ func find_player():
 
 
 func _on_pause_timeout() -> void:
-	attack()
-	
-	
-func start_attack():
-	pause_timer.start()
 	charge_progress.visible = true
 	charge_tween = create_tween()
 	charge_tween.set_ease(Tween.EASE_IN)
 	charge_tween.set_trans(Tween.TRANS_CUBIC)
 	charge_tween.tween_property(charge_progress, "value", 100, 1)
+	charge_tween.finished.connect(func(): attack())
+	
+	
+func start_attack():
+	pause_timer.wait_time = random.randf_range(0, 2)
+	pause_timer.start()
 
 
 func attack():
