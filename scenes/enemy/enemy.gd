@@ -8,6 +8,7 @@ class_name Enemy
 
 var player: CharacterBody2D
 var health := max_health
+var damage: float = 35
 
 
 func _ready() -> void:
@@ -33,9 +34,9 @@ func check_dead() -> void:
 		animations.play("Death")
 
 
-func _on_damaged(damage: float, body: CharacterBody2D):
+func _on_damaged(damage_taken: float, body: CharacterBody2D):
 	if body == self:
-		health -= damage
+		health -= damage_taken
 		
 		
 func _on_death_finished():

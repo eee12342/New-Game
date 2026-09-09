@@ -13,6 +13,7 @@ var bullet_paths = {
 var charge_started_time: float
 
 @export var speed := 300.0
+@export var health: float = 100
 
 var colours: Array = ["colour1", "colour2", "colour3", "colour4"]
 var current_colour: String = "colour1"
@@ -48,6 +49,7 @@ func _physics_process(_delta: float) -> void:
 		in_colour_change_mode = false
 		
 	handle_rotation()
+	check_dead()
 
 	move_and_slide()
 	
@@ -74,3 +76,16 @@ func handle_colour() -> void:
 		if Input.is_action_pressed(colour) and current_colour != colour:
 			sprite.animation = colour
 			current_colour = colour
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemies"):
+		var damage = body.damage
+		health -= damage
+		
+
+func check_dead():
+	if health <= 0:
+		Messenger.player_dead = true
+		queue_free()
+		

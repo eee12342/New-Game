@@ -77,7 +77,7 @@ speed = 450.0
 [node name="Enemies" type="Node2D" parent="." unique_id=1966949581]
 z_index = 1
 
-[node name="Enemy" parent="Enemies" unique_id=243331702 instance=ExtResource("2_0wfyh")]
+[node name="Enemy" parent="Enemies" unique_id=243331702 groups=["enemies"] instance=ExtResource("2_0wfyh")]
 position = Vector2(915, 246)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=170960402]

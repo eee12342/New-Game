@@ -84,9 +84,11 @@ colors = PackedColorArray(1, 0.08627451, 1, 1, 1, 1, 1, 0)
 offsets = PackedFloat32Array(0.12719299, 0.9930796)
 colors = PackedColorArray(0.30980393, 1, 0.14509805, 1, 1, 1, 1, 0)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 13.0
+
 [node name="Character" type="CharacterBody2D" unique_id=628092636]
 scale = Vector2(2, 2)
-collision_mask = 5
 script = ExtResource("1_cuyo6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=825170863]
@@ -220,3 +222,11 @@ position = Vector2(22.5, -10)
 
 [node name="BulletSpawn3" type="Marker2D" parent="BulletSpawns" unique_id=962749999]
 position = Vector2(22.5, 10)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1989748303]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1258400115]
+shape = SubResource("CircleShape2D_bhunq")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

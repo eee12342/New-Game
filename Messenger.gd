@@ -5,6 +5,7 @@ signal enemy_is_hit(projectile: CharacterBody2D, enemy: CharacterBody2D)
 signal damage_to_enemy(damage_value: float, enemy: CharacterBody2D)
 
 var Player: CharacterBody2D
+var player_dead: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,3 +24,4 @@ func enemy_hit(projectile: CharacterBody2D, enemy: CharacterBody2D) -> void:
 
 func damage_enemy(damage_value: float, enemy: CharacterBody2D):
 	damage_to_enemy.emit(damage_value, enemy)
+	

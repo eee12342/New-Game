@@ -158,19 +158,18 @@ scale_amount_curve = SubResource("Curve_n0f10")
 color_ramp = SubResource("Gradient_gwnwj")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1293576095]
-target_position = Vector2(300, 0)
+target_position = Vector2(200, 0)
 
 [node name="Pause" type="Timer" parent="." unique_id=14633251]
 one_shot = true
 
 [node name="ArrowProgress" parent="." unique_id=1109070990 instance=ExtResource("4_hddgn")]
-visible = false
 z_index = -1
 offset_left = 7.0
 offset_top = -8.0
 offset_right = 127.0
 offset_bottom = 32.0
-scale = Vector2(2.5, 1)
+scale = Vector2(1.7, 1)
 value = 0.0
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -25,8 +25,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if not finding_player:
-		find_player()
+	if not Messenger.player_dead:
+		if not finding_player:
+			find_player()
 	
 
 func find_player():
@@ -41,6 +42,7 @@ func find_player():
 	#momentum_tween.tween_property(self, "global_position", momentum_target, 2)
 	
 	tween = create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, "global_rotation", target, rotation_speed_seconds)
 	tween.finished.connect(func(): start_attack())
 
@@ -69,7 +71,7 @@ func attack():
 	attack_tween = create_tween()
 	attack_tween.set_ease(Tween.EASE_IN_OUT)
 	attack_tween.set_trans(Tween.TRANS_QUAD)
-	attack_tween.tween_property(self, "global_position", to_global(raycast.target_position), 1)
+	attack_tween.tween_property(self, "global_position", to_global(raycast.target_position), 0.5)
 	attack_tween.finished.connect(func(): attack_finished())
 	
 	
