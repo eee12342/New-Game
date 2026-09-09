@@ -4,31 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dpcodqu5fbvf" path="res://art/EnemyArt/ShitterEnemy.png" id="2_a3pup"]
 [ext_resource type="Texture2D" uid="uid://cq6o3phc5pem0" path="res://art/SpecialEffects/SmallExplosion.png" id="3_dfp62"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o6xl0"]
-radius = 10.012492
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tipki"]
-radius = 11.0
-
-[sub_resource type="Gradient" id="Gradient_40wdo"]
-offsets = PackedFloat32Array(0, 0.9978448)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_c105b"]
-gradient = SubResource("Gradient_40wdo")
-fill = 1
-fill_from = Vector2(0.46153846, 0.44444445)
-fill_to = Vector2(0.88247865, 0.14529915)
-
-[sub_resource type="Curve" id="Curve_n0f10"]
-_data = [Vector2(0.015686281, 0.6659483), 0.0, 0.0, 0, 0, Vector2(0.27450982, 1), 0.39823893, 0.39823893, 0, 0, Vector2(0.9941177, 0.15510207), -0.2880246, 0.0, 0, 0]
-point_count = 3
-metadata/_snap_count = 12
-
-[sub_resource type="Gradient" id="Gradient_gwnwj"]
-offsets = PackedFloat32Array(0.0065789474, 0.20833333, 0.4473684, 0.7017544, 1)
-colors = PackedColorArray(0.4862745, 0.08235294, 0.043137256, 1, 1, 0.08235294, 0.043137256, 1, 0.9019608, 0.3882353, 0.17254902, 1, 0.9019608, 0.6862745, 0.07450981, 1, 0.9019608, 0.6862745, 0.07450981, 0)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfp62"]
 atlas = ExtResource("3_dfp62")
 region = Rect2(0, 0, 64, 64)
@@ -88,24 +63,58 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wadvc")
 }],
-"loop": 1,
-"name": &"Explosion",
+"loop": 0,
+"name": &"Death",
 "speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a3pup")
+}],
+"loop": 1,
+"name": &"Default",
+"speed": 5.0
 }]
 
-[node name="Enemy" type="CharacterBody2D" unique_id=243331702]
+[sub_resource type="CircleShape2D" id="CircleShape2D_o6xl0"]
+radius = 10.012492
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tipki"]
+radius = 11.0
+
+[sub_resource type="Gradient" id="Gradient_40wdo"]
+offsets = PackedFloat32Array(0, 0.9978448)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c105b"]
+gradient = SubResource("Gradient_40wdo")
+fill = 1
+fill_from = Vector2(0.46153846, 0.44444445)
+fill_to = Vector2(0.88247865, 0.14529915)
+
+[sub_resource type="Curve" id="Curve_n0f10"]
+_data = [Vector2(0.015686281, 0.6659483), 0.0, 0.0, 0, 0, Vector2(0.27450982, 1), 0.39823893, 0.39823893, 0, 0, Vector2(0.9941177, 0.15510207), -0.2880246, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_count = 12
+
+[sub_resource type="Gradient" id="Gradient_gwnwj"]
+offsets = PackedFloat32Array(0.0065789474, 0.20833333, 0.4473684, 0.7017544, 1)
+colors = PackedColorArray(0.4862745, 0.08235294, 0.043137256, 1, 1, 0.08235294, 0.043137256, 1, 0.9019608, 0.3882353, 0.17254902, 1, 0.9019608, 0.6862745, 0.07450981, 1, 0.9019608, 0.6862745, 0.07450981, 0)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=243331702 node_paths=PackedStringArray("animations")]
 scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("1_mywme")
+animations = NodePath("Animations")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=603739376]
+[node name="Animations" type="AnimatedSprite2D" parent="." unique_id=1331325728]
 texture_filter = 1
-position = Vector2(3.5, -0.5)
-texture = ExtResource("2_a3pup")
+sprite_frames = SubResource("SpriteFrames_c105b")
+animation = &"Default"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559677973]
-position = Vector2(1.5, 0)
+position = Vector2(-1.5, 0)
 scale = Vector2(1, 1.2)
 shape = SubResource("CircleShape2D_o6xl0")
 
@@ -151,10 +160,6 @@ target_position = Vector2(300, 0)
 [node name="Pause" type="Timer" parent="." unique_id=14633251]
 wait_time = 2.0
 one_shot = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1331325728]
-sprite_frames = SubResource("SpriteFrames_c105b")
-animation = &"Explosion"
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="Pause" to="." method="_on_pause_timeout"]

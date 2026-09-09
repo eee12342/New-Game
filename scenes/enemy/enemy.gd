@@ -4,6 +4,7 @@ class_name Enemy
 
 @export var speed: float = 300.0
 @export var max_health: float = 100.0
+@export var animations: AnimatedSprite2D
 
 var player: CharacterBody2D
 var health := max_health
@@ -12,6 +13,7 @@ var health := max_health
 func _ready() -> void:
 	player = Messenger.Player
 	Messenger.connect("damage_to_enemy", _on_damaged)
+	animations.connect("animation_finished", _on_death_finished)
 
 
 func _physics_process(_delta: float) -> void:
@@ -27,9 +29,14 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		
 func check_dead() -> void:
 	if health <= 0:
-		self.queue_free()
+		animations.visible = true
+		animations.play("Death")
 
 
 func _on_damaged(damage: float, body: CharacterBody2D):
 	if body == self:
 		health -= damage
+		
+		
+func _on_death_finished():
+	self.queue_free()
