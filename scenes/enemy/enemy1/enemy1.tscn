@@ -108,9 +108,12 @@ script = ExtResource("1_mywme")
 animations = NodePath("Animations")
 
 [node name="Animations" type="AnimatedSprite2D" parent="." unique_id=1331325728]
+modulate = Color(0.8586687, 0.8586687, 0.8586687, 1)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c105b")
-animation = &"Default"
+animation = &"Death"
+frame = 7
+frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559677973]
