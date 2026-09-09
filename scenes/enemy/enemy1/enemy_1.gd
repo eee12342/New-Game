@@ -12,12 +12,16 @@ var paused: bool = false
 var target: float
 
 var momentum_tween: Tween
+var attack_tween: Tween
+var tween: Tween
+var tweens: Array
 
 
 func _process(_delta: float) -> void:
 	if not finding_player:
 		find_player()
-
+	tweens = [momentum_tween, attack_tween, tween]
+	
 
 func find_player():
 	finding_player = true
@@ -25,12 +29,12 @@ func find_player():
 	var delta = angle_difference(global_rotation, raw_target)
 	target = global_rotation + delta
 
-	var momentum_tween = create_tween()
+	momentum_tween = create_tween()
 	momentum_tween.set_ease(Tween.EASE_OUT)
 	var momentum_target: Vector2 = to_global(raycast.target_position / 8)
 	momentum_tween.tween_property(self, "global_position", momentum_target, 2)
 	
-	var tween = create_tween()
+	tween = create_tween()
 	tween.tween_property(self, "global_rotation", target, rotation_speed_seconds)
 	tween.finished.connect(func(): attack())
 
@@ -43,7 +47,7 @@ func attack():
 	if momentum_tween:
 		momentum_tween.kill()
 		
-	var attack_tween = create_tween()
+	attack_tween = create_tween()
 	attack_tween.set_ease(Tween.EASE_IN_OUT)
 	attack_tween.set_trans(Tween.TRANS_QUAD)
 	attack_tween.tween_property(self, "global_position", to_global(raycast.target_position), 1)
@@ -52,3 +56,19 @@ func attack():
 	
 func attack_finished():
 	finding_player = false
+	
+
+func check_dead() -> void:
+	if health <= 0:
+		death_tween()
+		super()
+		
+		
+func death_tween() -> void:
+	for tw in tweens:
+		if tw:
+			tw.kill()
+			
+	var dth = create_tween()
+	var momentum_target: Vector2 = to_global(raycast.target_position / 10)
+	dth.tween_property(self, "global_position", momentum_target, 1)
