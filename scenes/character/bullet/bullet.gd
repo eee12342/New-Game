@@ -7,6 +7,7 @@ class_name Bullet
 var pos: Vector2
 var rot: float
 var dir: float
+@export var max_charge_time: float = 1000
 
 
 func _ready() -> void:
@@ -15,8 +16,10 @@ func _ready() -> void:
 	global_rotation = rot
 
 
-func setup(_charge_time: float) -> void:
-	pass
+func setup(charge_time: float) -> void:
+	if charge_time > max_charge_time:
+		charge_time = max_charge_time
+	
 
 
 func _physics_process(delta: float) -> void:

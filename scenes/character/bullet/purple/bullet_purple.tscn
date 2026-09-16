@@ -14,11 +14,13 @@ point_count = 2
 offsets = PackedFloat32Array(0.13377193, 1)
 colors = PackedColorArray(8.795797, 1.2410065, 9.623228, 0.07450981, 0, 0, 0, 0)
 
-[node name="BulletPurple" type="CharacterBody2D" unique_id=1838346968 groups=["player_projectiles"]]
+[node name="BulletPurple" type="CharacterBody2D" unique_id=1838346968 node_paths=PackedStringArray("glow", "particles") groups=["player_projectiles"]]
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_cjnjl")
+glow = NodePath("Effects/Glow")
+particles = NodePath("Effects/PurpleParticles")
 speed = 1500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314644757]
