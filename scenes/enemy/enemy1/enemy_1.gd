@@ -2,6 +2,8 @@ extends Enemy
 
 
 @export var rotation_speed_seconds: float = 0.5
+@export var rotation_variance: float = 0.1
+@export var charge_time: float = 0.5
 
 @onready var pause_timer: Timer = $Pause
 @onready var raycast: RayCast2D = $RayCast2D
@@ -34,7 +36,7 @@ func find_player():
 	finding_player = true
 	var raw_target = global_position.direction_to(player.global_position).angle()
 	var delta = angle_difference(global_rotation, raw_target)
-	target = global_rotation + delta
+	target = global_rotation + delta + randf_range(-rotation_variance, rotation_variance)
 
 	#momentum_tween = create_tween()
 	#momentum_tween.set_ease(Tween.EASE_OUT)
@@ -47,18 +49,14 @@ func find_player():
 	tween.finished.connect(func(): start_attack())
 
 
-func _on_pause_timeout() -> void:
+func start_attack() -> void:
 	charge_progress.visible = true
 	charge_tween = create_tween()
 	charge_tween.set_ease(Tween.EASE_IN)
 	charge_tween.set_trans(Tween.TRANS_CUBIC)
-	charge_tween.tween_property(charge_progress, "value", 100, 1)
+	charge_tween.tween_property(charge_progress, "value", 100, charge_time)
 	charge_tween.finished.connect(func(): attack())
 	
-	
-func start_attack():
-	pause_timer.wait_time = random.randf_range(0, 2)
-	pause_timer.start()
 
 
 func attack():
@@ -77,8 +75,9 @@ func attack():
 	
 	
 func attack_finished():
-	finding_player = false
 	charge_tween.kill()
+	pause_timer.wait_time = random.randf_range(0, 3)
+	pause_timer.start()
 	
 
 func check_dead() -> void:
@@ -96,3 +95,7 @@ func death_tween() -> void:
 	var dth = create_tween()
 	var momentum_target: Vector2 = to_global(raycast.target_position / 10)
 	dth.tween_property(self, "global_position", momentum_target, 1)
+
+
+func _on_pause_timeout() -> void:
+	finding_player = false

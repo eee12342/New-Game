@@ -14,7 +14,7 @@ var random = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
-	player = Messenger.Player
+	player = Messenger.player
 	Messenger.connect("damage_to_enemy", _on_damaged)
 	animations.connect("animation_finished", _on_death_finished)
 
@@ -41,8 +41,8 @@ func _on_damaged(damage_taken: float, body: CharacterBody2D):
 		health -= damage_taken
 		
 		damage_tween = create_tween()
-		damage_tween.tween_property(self, "modulate", Color(18.892, 18.892, 18.892), 0.15)
-		damage_tween.tween_property(self, "modulate", Color("#ffffff"), 0.15)
+		damage_tween.tween_property(animations, "self_modulate", Color(18.892, 18.892, 18.892), 0.1)
+		damage_tween.tween_property(animations, "self_modulate", Color("#ffffff"), 0.15)
 		
 		
 func _on_death_finished():

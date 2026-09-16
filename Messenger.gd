@@ -4,7 +4,7 @@ extends Node
 signal enemy_is_hit(projectile: CharacterBody2D, enemy: CharacterBody2D)
 signal damage_to_enemy(damage_value: float, enemy: CharacterBody2D)
 
-var Player: CharacterBody2D
+var player: CharacterBody2D
 var player_dead: bool = false
 
 

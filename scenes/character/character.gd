@@ -2,7 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 
-@onready var sprite: AnimatedSprite2D = $Sprite
+@onready var sprite: AnimatedSprite2D = $Sprites/Sprite
+@onready var sprite_node: Node2D = $Sprites
 var bullet_blue := preload("res://scenes/character/bullet/blue/bulletblue.tscn")
 var bullet_purple := preload("res://scenes/character/bullet/purple/bullet_purple.tscn")
 var bullet_paths = {
@@ -21,7 +22,7 @@ var in_colour_change_mode: bool = false
 
 
 func _ready() -> void:
-	Messenger.Player = self
+	Messenger.player = self
 
 
 func _physics_process(_delta: float) -> void:
@@ -82,6 +83,10 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
 		var damage = body.damage
 		health -= damage
+		
+		var damage_tween: Tween = create_tween()
+		damage_tween.tween_property(sprite_node, "modulate", Color(5.913, 0.0, 0.0), 0.15)
+		damage_tween.tween_property(sprite_node, "modulate", Color("#ffffff"), 0.15)
 		
 
 func check_dead():
