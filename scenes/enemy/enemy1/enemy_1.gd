@@ -36,7 +36,7 @@ func find_player():
 	finding_player = true
 	var raw_target = global_position.direction_to(player.global_position).angle()
 	var delta = angle_difference(global_rotation, raw_target)
-	target = global_rotation + delta + randf_range(-rotation_variance, rotation_variance)
+	target = global_rotation + delta + random.randf_range(-rotation_variance, rotation_variance)
 
 	#momentum_tween = create_tween()
 	#momentum_tween.set_ease(Tween.EASE_OUT)

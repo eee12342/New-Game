@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dgnvd7x61fo5n" path="res://scenes/character/character.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bwqrp776o8d5o" path="res://scenes/main.gd" id="1_tipki"]
-[ext_resource type="PackedScene" uid="uid://c7l0chwjkwn0j" path="res://scenes/enemy/enemy1/enemy1.tscn" id="2_0wfyh"]
 [ext_resource type="Shader" uid="uid://bsfsd20usidm7" path="res://art/Shaders/Scatter.gdshader" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://cnxxlyg8vm7d" path="res://art/BackgroundArt/GalaxySkyBG.png" id="3_tefeu"]
 [ext_resource type="Shader" uid="uid://dr1dn77antlji" path="res://art/Shaders/Starlight.gdshader" id="4_o6xl0"]
@@ -79,17 +78,180 @@ speed = 450.0
 [node name="Enemies" type="Node2D" parent="." unique_id=1966949581]
 z_index = 1
 
-[node name="Enemy" parent="Enemies" unique_id=243331702 groups=["enemies"] instance=ExtResource("2_0wfyh")]
-position = Vector2(915, 246)
-charge_time = 0.75
+[node name="EnemySpawnPoints" type="Node2D" parent="Enemies" unique_id=1949906850]
 
-[node name="Enemy2" parent="Enemies" unique_id=990959022 groups=["enemies"] instance=ExtResource("2_0wfyh")]
-position = Vector2(65, 65)
-charge_time = 0.75
+[node name="SP1" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=1660474804]
+position = Vector2(200, 0)
 
-[node name="Enemy3" parent="Enemies" unique_id=734930953 groups=["enemies"] instance=ExtResource("2_0wfyh")]
-position = Vector2(541, 100)
-charge_time = 0.75
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP1" unique_id=181770644]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP1" unique_id=447647628]
+position = Vector2(0, 50)
+
+[node name="SP2" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=160517175]
+position = Vector2(400, 0)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP2" unique_id=1237374720]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP2" unique_id=2132592696]
+position = Vector2(0, 50)
+
+[node name="SP3" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=536583849]
+position = Vector2(600, 0)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP3" unique_id=738689882]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP3" unique_id=174077435]
+position = Vector2(0, 50)
+
+[node name="SP4" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=157323872]
+position = Vector2(800, 0)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP4" unique_id=1475182682]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP4" unique_id=207762168]
+position = Vector2(0, 50)
+
+[node name="SP5" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=1175422243]
+position = Vector2(1000, 0)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP5" unique_id=229098756]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP5" unique_id=2085374144]
+position = Vector2(0, 50)
+
+[node name="SP6" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=1552151664]
+position = Vector2(1150, 100)
+rotation = 1.5707964
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP6" unique_id=362563057]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP6" unique_id=344044214]
+position = Vector2(0, 50)
+
+[node name="SP7" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=1439983444]
+position = Vector2(1150, 250)
+rotation = 1.5707964
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP7" unique_id=1370161737]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP7" unique_id=520766865]
+position = Vector2(0, 50)
+
+[node name="SP8" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=1035064550]
+position = Vector2(1150, 400)
+rotation = 1.5707964
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP8" unique_id=56753090]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP8" unique_id=135592796]
+position = Vector2(0, 50)
+
+[node name="SP9" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=202323861]
+position = Vector2(1150, 550)
+rotation = 1.5707964
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP9" unique_id=851976981]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP9" unique_id=828800930]
+position = Vector2(0, 50)
+
+[node name="SP10" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=915827776]
+position = Vector2(200, 700)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP10" unique_id=501351589]
+position = Vector2(0, 50)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP10" unique_id=820183933]
+position = Vector2(0, -100)
+
+[node name="SP11" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=2100148855]
+position = Vector2(400, 700)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP11" unique_id=1156882178]
+position = Vector2(0, 50)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP11" unique_id=1872474296]
+position = Vector2(0, -100)
+
+[node name="SP12" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=1788822690]
+position = Vector2(600, 700)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP12" unique_id=220678464]
+position = Vector2(0, 50)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP12" unique_id=367723448]
+position = Vector2(0, -100)
+
+[node name="SP13" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=606908767]
+position = Vector2(800, 700)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP13" unique_id=153553221]
+position = Vector2(0, -100)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP13" unique_id=1996458074]
+position = Vector2(0, 50)
+
+[node name="SP14" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=582676188]
+position = Vector2(1000, 700)
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP14" unique_id=180623010]
+position = Vector2(0, 50)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP14" unique_id=1554937828]
+position = Vector2(0, -100)
+
+[node name="SP15" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=2018035990]
+position = Vector2(0, 100)
+rotation = 1.5707964
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP15" unique_id=1995368541]
+position = Vector2(0, 50)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP15" unique_id=1691980590]
+position = Vector2(0, -100)
+
+[node name="SP16" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=737002447]
+position = Vector2(0, 250)
+rotation = 1.5707964
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP16" unique_id=1608753300]
+position = Vector2(0, 50)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP16" unique_id=209428727]
+position = Vector2(0, -100)
+
+[node name="SP17" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=1017870773]
+position = Vector2(0, 400)
+rotation = 1.5707964
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP17" unique_id=1173522409]
+position = Vector2(0, 50)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP17" unique_id=58994847]
+position = Vector2(0, -100)
+
+[node name="SP18" type="Node2D" parent="Enemies/EnemySpawnPoints" unique_id=1691137341]
+position = Vector2(0, 550)
+rotation = 1.5707964
+
+[node name="Start" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP18" unique_id=549711700]
+position = Vector2(0, 50)
+
+[node name="End" type="Marker2D" parent="Enemies/EnemySpawnPoints/SP18" unique_id=2119242227]
+position = Vector2(0, -100)
+
+[node name="SpawnTimer" type="Timer" parent="Enemies" unique_id=1114648601]
+one_shot = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=170960402]
 z_index = -1
@@ -125,3 +287,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1742732268]
 environment = SubResource("Environment_c105b")
+
+[node name="Node" type="Node" parent="." unique_id=1376752932]
+
+[connection signal="timeout" from="Enemies/SpawnTimer" to="." method="spawn_enemy"]
