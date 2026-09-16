@@ -11,6 +11,7 @@ var bullet_paths = {
 	"colour2": bullet_purple
 }
 @onready var bullet_spawn: Marker2D = $BulletSpawns/BulletSpawn
+@onready var hitbox: Area2D = $Hitbox
 var charge_started_time: float
 
 @export var speed := 300.0
@@ -96,4 +97,9 @@ func check_dead():
 	if health <= 0:
 		Messenger.player_dead = true
 		queue_free()
+		
+		
+func set_collision():
+	hitbox.collision_mask = 4
+	hitbox.collision_layer = 1
 		

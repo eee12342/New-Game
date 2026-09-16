@@ -6,11 +6,14 @@ const enemy1_scene := preload("res://scenes/enemy/enemy1/enemy1.tscn")
 @onready var enemies_spawn_timer: Timer = $Enemies/SpawnTimer
 @onready var enemies_spawn_points: Node2D = $Enemies/EnemySpawnPoints
 
+@onready var player: CharacterBody2D = $Character
+
 var rng = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
 	spawner()
+	player.set_collision()
 	
 
 func _process(_delta: float) -> void:
@@ -33,6 +36,7 @@ func spawn_enemy():
 	var enemy = enemy1_scene.instantiate()
 	enemy.global_position = start.global_position
 	enemy.set_collision()
+	enemy.add_to_group("enemies")
 	add_child(enemy)
 	
 	tween_spawn(enemy, end)

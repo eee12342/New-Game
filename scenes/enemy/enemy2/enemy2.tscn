@@ -53,7 +53,7 @@ position = Vector2(6, -0.6666667)
 scale = Vector2(1, 1.2)
 shape = SubResource("CircleShape2D_tipki")
 
-[node name="Visuals" type="Node2D" parent="." unique_id=1174103694]
+[node name="Visuals" type="Node2D" parent="." unique_id=1174103694 groups=["enemies"]]
 position = Vector2(-10, 0)
 rotation = 3.1415927
 
