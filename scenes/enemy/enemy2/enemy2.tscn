@@ -32,6 +32,9 @@ colors = PackedColorArray(0.4862745, 0.08235294, 0.043137256, 1, 1, 0.08235294, 
 scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("1_dhsvk")
+speed = null
+max_health = null
+colour_chance = null
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=603739376]
 texture_filter = 1

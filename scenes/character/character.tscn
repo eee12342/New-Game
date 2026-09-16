@@ -97,7 +97,7 @@ script = ExtResource("1_cuyo6")
 texture_filter = 1
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_6nn2t")
-animation = &"colour1"
+animation = &"colour4"
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprites/Sprite" unique_id=1284472976]
 energy = 2.0
@@ -222,12 +222,14 @@ position = Vector2(22.5, -10)
 position = Vector2(22.5, 10)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1989748303]
+visible = false
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1258400115]
 shape = SubResource("CircleShape2D_bhunq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=825170863]
+visible = false
 scale = Vector2(2.526, 2.526)
 shape = SubResource("CircleShape2D_cuyo6")
 

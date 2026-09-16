@@ -9,7 +9,7 @@ class_name Enemy
 
 @export var colour_chance: int = 4
 
-var colours: Array = ["colour1"] # TODO: add more colours
+var colours: Array = ["colour1", "colour2", "colour3", "colour4"]
 var current_colour: String
 
 var player: CharacterBody2D
@@ -57,7 +57,7 @@ func _on_death_finished():
 	
 
 func set_random_colour():
-	var will_change_colour = random.randi_range(0, colour_chance)
+	var will_change_colour = random.randi_range(1, colour_chance)
 	if will_change_colour != 1:
 		return
 	
@@ -72,6 +72,13 @@ func tween_colour(chosen_colour: String):
 	var end_colour
 	if chosen_colour == "colour1":
 		end_colour = Color(Color(0.477, 1.491, 4.416))
+	elif chosen_colour == "colour2":
+		end_colour = Color(4.332, 1.168, 1.869)
+	elif chosen_colour == "colour3":
+		end_colour = Color(3.294, 1.9, 0.0)
+	elif chosen_colour == "colour4":
+		end_colour = Color(1.265, 2.323, 0.506)
+		
 	var colour_change_tween: Tween = create_tween()
 	colour_change_tween.tween_property(self, "modulate", end_colour, 0.5)
 
