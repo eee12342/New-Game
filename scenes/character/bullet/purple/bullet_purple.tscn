@@ -22,6 +22,7 @@ script = ExtResource("1_cjnjl")
 glow = NodePath("Effects/Glow")
 particles = NodePath("Effects/PurpleParticles")
 speed = 1500
+max_charge_time = 1500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314644757]
 position = Vector2(23.333332, 1.013279e-06)

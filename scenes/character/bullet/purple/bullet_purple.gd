@@ -13,14 +13,15 @@ func _ready() -> void:
 	
 
 func setup(chrg_time):
-	super(chrg_time)
+	if chrg_time > max_charge_time:
+		chrg_time = max_charge_time
 	
 	damage *= (chrg_time / 1000 + 1)
 	speed *= (chrg_time / 1000 + 1)
 	scale = Vector2(scale.x * (chrg_time / 2000) + 1, scale.y * (chrg_time / 2000) + 1)
 	if scale < Vector2.ONE:
 		scale = Vector2.ONE
-	glow.energy *= (chrg_time / 30 + 1)
+	glow.energy *= (chrg_time / 50 + 1)
 	particles.amount *= (chrg_time / 100 + 1)
 	
 

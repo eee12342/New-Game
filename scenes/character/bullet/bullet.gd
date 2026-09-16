@@ -16,9 +16,8 @@ func _ready() -> void:
 	global_rotation = rot
 
 
-func setup(charge_time: float) -> void:
-	if charge_time > max_charge_time:
-		charge_time = max_charge_time
+func setup(_charge_time: float) -> void:
+	pass
 	
 
 

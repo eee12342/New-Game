@@ -7,7 +7,8 @@ var time_passed: float = 0
 
 
 func setup(chrg_time: float) -> void:
-	super(chrg_time)
+	if chrg_time > max_charge_time:
+		chrg_time = max_charge_time
 	
 	damage *= (chrg_time / 1000 + 1)
 	amplitude *= (chrg_time / 1000 + 1)
