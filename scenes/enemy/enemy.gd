@@ -5,6 +5,12 @@ class_name Enemy
 @export var speed: float = 300.0
 @export var max_health: float = 100.0
 @export var animations: AnimatedSprite2D
+@export var hitbox: Area2D
+
+@export var colour_chance: int = 4
+
+var colours: Array = ["colour1"] # TODO: add more colours
+var current_colour: String
 
 var player: CharacterBody2D
 var health := max_health
@@ -14,6 +20,7 @@ var random = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
+	print("Enemy ready, collision layer: ", collision_layer, " mask: ", collision_mask)
 	player = Messenger.player
 	Messenger.connect("damage_to_enemy", _on_damaged)
 	animations.connect("animation_finished", _on_death_finished)
@@ -47,3 +54,35 @@ func _on_damaged(damage_taken: float, body: CharacterBody2D):
 		
 func _on_death_finished():
 	self.queue_free()
+	
+
+func set_random_colour():
+	var will_change_colour = random.randi_range(0, colour_chance)
+	if will_change_colour != 1:
+		return
+	
+	var colour_choice_idx = random.randi_range(0, len(colours) - 1)
+	var colour_chosen = colours[colour_choice_idx]
+	tween_colour(colour_chosen)
+	current_colour = colour_chosen
+	
+	
+func tween_colour(chosen_colour: String):
+	# TODO: add cases for each colour
+	var end_colour
+	if chosen_colour == "colour1":
+		end_colour = Color(Color(0.477, 1.491, 4.416))
+	var colour_change_tween: Tween = create_tween()
+	colour_change_tween.tween_property(self, "modulate", end_colour, 0.5)
+
+
+func reset_colour():
+	var end_colour = Color("#ffffff")
+	var colour_change_tween: Tween = create_tween()
+	colour_change_tween.tween_property(self, "modulate", end_colour, 0.5)
+	current_colour = ""
+	
+
+func set_collision():
+	hitbox.collision_mask = 3
+	hitbox.collision_layer = 4

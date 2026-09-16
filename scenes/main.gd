@@ -13,7 +13,7 @@ func _ready() -> void:
 	spawner()
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 
@@ -31,8 +31,9 @@ func spawn_enemy():
 	var end = spawn_node.get_child(1)
 	
 	var enemy = enemy1_scene.instantiate()
-	add_child(enemy)
 	enemy.global_position = start.global_position
+	enemy.set_collision()
+	add_child(enemy)
 	
 	tween_spawn(enemy, end)
 	

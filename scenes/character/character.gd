@@ -81,6 +81,9 @@ func handle_colour() -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
+		if body.current_colour == current_colour:
+			Messenger.damage_enemy(10000, body)
+			return
 		var damage = body.damage
 		health -= damage
 		

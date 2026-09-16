@@ -50,6 +50,7 @@ func find_player():
 
 
 func start_attack() -> void:
+	set_random_colour()
 	charge_progress.visible = true
 	charge_tween = create_tween()
 	charge_tween.set_ease(Tween.EASE_IN)
@@ -76,6 +77,7 @@ func attack():
 	
 func attack_finished():
 	charge_tween.kill()
+	reset_colour()
 	pause_timer.wait_time = random.randf_range(0, 3)
 	pause_timer.start()
 	

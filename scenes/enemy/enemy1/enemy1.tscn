@@ -102,7 +102,7 @@ metadata/_snap_count = 12
 offsets = PackedFloat32Array(0.0065789474, 0.20833333, 0.4473684, 0.7017544, 1)
 colors = PackedColorArray(0.4862745, 0.08235294, 0.043137256, 1, 1, 0.08235294, 0.043137256, 1, 0.9019608, 0.3882353, 0.17254902, 1, 0.9019608, 0.6862745, 0.07450981, 1, 0.9019608, 0.6862745, 0.07450981, 0)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=243331702 node_paths=PackedStringArray("animations")]
+[node name="Enemy" type="CharacterBody2D" unique_id=243331702 node_paths=PackedStringArray("animations", "hitbox")]
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 0
@@ -110,9 +110,10 @@ script = ExtResource("1_mywme")
 rotation_variance = 0.2
 charge_time = 1.0
 animations = NodePath("Animations")
+hitbox = NodePath("Hitbox")
+colour_chance = 1
 
 [node name="Animations" type="AnimatedSprite2D" parent="." unique_id=1331325728]
-modulate = Color(0.8586687, 0.8586687, 0.8586687, 1)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c105b")
 animation = &"Default"
