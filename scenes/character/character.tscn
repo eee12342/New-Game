@@ -11,6 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://li0veinl82tf" path="res://art/Icon Art/OrangeFrameLight.png" id="9_oe6dy"]
 [ext_resource type="Texture2D" uid="uid://c12rbqhtrcu5u" path="res://art/Icon Art/PurpleFrameLight.png" id="10_cuvpk"]
 [ext_resource type="Texture2D" uid="uid://d05o1v2dj8m55" path="res://art/Icon Art/BlueFrameLight.png" id="11_rvcjf"]
+[ext_resource type="Texture2D" uid="uid://dyhgl1ajcyk30" path="res://art/Icon Art/SelectionArt/BlueSelect_S.png" id="12_jghgk"]
+[ext_resource type="Texture2D" uid="uid://c8taluas827q2" path="res://art/Icon Art/SelectionArt/BlueSelect_L.png" id="13_4qkus"]
+[ext_resource type="Texture2D" uid="uid://d2kv7iw5vw5oa" path="res://art/Icon Art/SelectionArt/PurpleSelect_S.png" id="14_f6x4b"]
+[ext_resource type="Texture2D" uid="uid://cqn7g16uov11a" path="res://art/Icon Art/SelectionArt/PurpleSelect_L.png" id="15_dqlfo"]
+[ext_resource type="Texture2D" uid="uid://dgbsc46u53whj" path="res://art/Icon Art/SelectionArt/GreenSelect_S.png" id="16_i8rw3"]
+[ext_resource type="Texture2D" uid="uid://brwasdq34qi76" path="res://art/Icon Art/SelectionArt/GreenSelect_L.png" id="17_wakg3"]
+[ext_resource type="Texture2D" uid="uid://cp6klbh1ju4g2" path="res://art/Icon Art/SelectionArt/OrangeSelect_S.png" id="18_yyohv"]
+[ext_resource type="Texture2D" uid="uid://dc2ntsmbliwc6" path="res://art/Icon Art/SelectionArt/OrangeSelect_L.png" id="19_teuh6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6nn2t"]
 animations = [{
@@ -80,6 +88,82 @@ colors = PackedColorArray(1, 0.08627451, 1, 1, 1, 1, 1, 0)
 [sub_resource type="Gradient" id="Gradient_oe6dy"]
 offsets = PackedFloat32Array(0.12719299, 0.9930796)
 colors = PackedColorArray(0.30980393, 1, 0.14509805, 1, 1, 1, 1, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6p5km"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jghgk")
+}],
+"loop": 0,
+"name": &"dim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4qkus")
+}],
+"loop": 0,
+"name": &"lit",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00mel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_f6x4b")
+}],
+"loop": 0,
+"name": &"dim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_dqlfo")
+}],
+"loop": 0,
+"name": &"lit",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l3jx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_i8rw3")
+}],
+"loop": 0,
+"name": &"dim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_wakg3")
+}],
+"loop": 0,
+"name": &"lit",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7fnn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_yyohv")
+}],
+"loop": 0,
+"name": &"dim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_teuh6")
+}],
+"loop": 0,
+"name": &"lit",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 13.0
@@ -209,6 +293,25 @@ texture = ExtResource("10_cuvpk")
 texture_filter = 1
 position = Vector2(-11, 0)
 texture = ExtResource("11_rvcjf")
+
+[node name="ColourWheelElements" type="Node2D" parent="Sprites/Frame" unique_id=674281782]
+visible = false
+
+[node name="Blue" type="AnimatedSprite2D" parent="Sprites/Frame/ColourWheelElements" unique_id=351982515]
+sprite_frames = SubResource("SpriteFrames_6p5km")
+animation = &"dim"
+
+[node name="Purple" type="AnimatedSprite2D" parent="Sprites/Frame/ColourWheelElements" unique_id=445755677]
+sprite_frames = SubResource("SpriteFrames_00mel")
+animation = &"dim"
+
+[node name="Green" type="AnimatedSprite2D" parent="Sprites/Frame/ColourWheelElements" unique_id=117794789]
+sprite_frames = SubResource("SpriteFrames_l3jx2")
+animation = &"dim"
+
+[node name="Orange" type="AnimatedSprite2D" parent="Sprites/Frame/ColourWheelElements" unique_id=2063403252]
+sprite_frames = SubResource("SpriteFrames_g7fnn")
+animation = &"dim"
 
 [node name="BulletSpawns" type="Node2D" parent="." unique_id=1060247796]
 

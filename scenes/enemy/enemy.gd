@@ -47,9 +47,10 @@ func _on_damaged(damage_taken: float, body: CharacterBody2D):
 	if body == self:
 		health -= damage_taken
 		
-		damage_tween = create_tween()
-		damage_tween.tween_property(animations, "self_modulate", Color(18.892, 18.892, 18.892), 0.1)
-		damage_tween.tween_property(animations, "self_modulate", Color("#ffffff"), 0.15)
+		if health > 0:
+			damage_tween = create_tween()
+			damage_tween.tween_property(animations, "self_modulate", Color(18.892, 18.892, 18.892), 0.1)
+			damage_tween.tween_property(animations, "self_modulate", Color("#ffffff"), 0.15)
 		
 		
 func _on_death_finished():

@@ -17,9 +17,18 @@ var charge_started_time: float
 @export var speed := 300.0
 @export var health: float = 100
 
+@onready var blue_wheel_element: AnimatedSprite2D = $Sprites/Frame/ColourWheelElements/Blue
+@onready var purple_wheel_element: AnimatedSprite2D = $Sprites/Frame/ColourWheelElements/Purple
+@onready var green_wheel_element: AnimatedSprite2D = $Sprites/Frame/ColourWheelElements/Green
+@onready var orange_wheel_element: AnimatedSprite2D = $Sprites/Frame/ColourWheelElements/Orange
+@onready var colour_wheel_elements: Array = [blue_wheel_element, purple_wheel_element, green_wheel_element, orange_wheel_element]
+@onready var colour_wheel_node: Node2D = $Sprites/Frame/ColourWheelElements
 var colours: Array = ["colour1", "colour2", "colour3", "colour4"]
 var current_colour: String = "colour1"
 var in_colour_change_mode: bool = false
+
+@export var dash_speed: float = 5
+var dash_target: Vector2
 
 
 func _ready() -> void:
@@ -27,13 +36,12 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	fire()
-	var shift_held := Input.is_action_pressed("colour_change_mode")
-	if shift_held:
+	var key_held := Input.is_action_pressed("colour_change_mode")
+	if key_held:
 		handle_colour()
+	elif Input.is_action_just_released("colour_change_mode"):
+		handle_colour_exit()
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("left", "right", "up", "down")
 	if direction:
 		velocity = direction * speed
@@ -46,10 +54,6 @@ func _physics_process(_delta: float) -> void:
 		var charge_time = Time.get_ticks_msec() - charge_started_time
 		fire(charge_time)
 		charge_started_time = 0
-	if Input.is_action_pressed("colour_change_mode"):
-		in_colour_change_mode = true
-	else:
-		in_colour_change_mode = false
 		
 	handle_rotation()
 	check_dead()
@@ -75,10 +79,15 @@ func handle_rotation() -> void:
 
 
 func handle_colour() -> void:
-	for colour in colours:
-		if Input.is_action_pressed(colour) and current_colour != colour:
-			sprite.animation = colour
-			current_colour = colour
+	colour_wheel_node.visible = true
+	#for colour in colours:
+		#if Input.is_action_pressed(colour) and current_colour != colour:
+			#sprite.animation = colour
+			#current_colour = colour
+
+
+func handle_colour_exit() -> void:
+	colour_wheel_node.visible = false
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
@@ -103,4 +112,7 @@ func check_dead():
 func set_collision():
 	hitbox.collision_mask = 4
 	hitbox.collision_layer = 1
-		
+
+
+func dash():
+	pass
