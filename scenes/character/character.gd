@@ -27,6 +27,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	fire()
 	var shift_held := Input.is_action_pressed("colour_change_mode")
 	if shift_held:
 		handle_colour()

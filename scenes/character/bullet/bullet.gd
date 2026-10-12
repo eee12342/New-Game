@@ -8,10 +8,12 @@ var pos: Vector2
 var rot: float
 var dir: float
 @export var max_charge_time: float = 1000
+@export var screen_notifier: VisibleOnScreenNotifier2D
 
 
 func _ready() -> void:
 	Messenger.connect("enemy_is_hit", _on_enemy_hit)
+	screen_notifier.connect("screen_exited", begone)
 	global_position = pos
 	global_rotation = rot
 

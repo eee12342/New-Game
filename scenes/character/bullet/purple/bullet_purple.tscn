@@ -14,7 +14,7 @@ point_count = 2
 offsets = PackedFloat32Array(0.13377193, 1)
 colors = PackedColorArray(8.795797, 1.2410065, 9.623228, 0.07450981, 0, 0, 0, 0)
 
-[node name="BulletPurple" type="CharacterBody2D" unique_id=1838346968 node_paths=PackedStringArray("glow", "particles") groups=["player_projectiles"]]
+[node name="BulletPurple" type="CharacterBody2D" unique_id=1838346968 node_paths=PackedStringArray("glow", "particles", "screen_notifier") groups=["player_projectiles"]]
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 0
@@ -23,6 +23,7 @@ glow = NodePath("Effects/Glow")
 particles = NodePath("Effects/PurpleParticles")
 speed = 1500
 max_charge_time = 1500.0
+screen_notifier = NodePath("VisibleOnScreenNotifier2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314644757]
 position = Vector2(23.333332, 1.013279e-06)
@@ -67,5 +68,9 @@ scale_amount_curve = SubResource("Curve_cjnjl")
 color_ramp = SubResource("Gradient_axnbm")
 hue_variation_min = 1.0
 hue_variation_max = 1.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2035684570]
+position = Vector2(26.52, 0)
+rect = Rect2(-23.52, -3, 40.52, 6.5)
 
 [connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
