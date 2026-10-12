@@ -118,12 +118,12 @@ offset_bottom = 646.0
 [node name="SmokeCloud" type="ColorRect" parent="CanvasLayer" unique_id=2090980123]
 material = SubResource("ShaderMaterial_bky6r")
 anchors_preset = -1
-anchor_left = 0.038194444
+anchor_left = -0.043402776
 anchor_right = -0.043402776
-offset_left = -44.0
-offset_top = -24.0
-offset_right = 1204.0
-offset_bottom = 665.0
+offset_left = 22.0
+offset_top = -23.0
+offset_right = 1270.0
+offset_bottom = 666.0
 metadata/_edit_use_anchors_ = true
 
 [node name="TitleCard" type="Sprite2D" parent="CanvasLayer" unique_id=1212365865]

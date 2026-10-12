@@ -279,10 +279,12 @@ offset_bottom = 646.0
 
 [node name="SmokeCloud" type="ColorRect" parent="CanvasLayer" unique_id=242915025]
 material = SubResource("ShaderMaterial_sugp2")
-offset_left = -44.0
-offset_top = -24.0
-offset_right = 1204.0
-offset_bottom = 665.0
+anchors_preset = -1
+anchor_right = -0.0034722222
+offset_left = -32.0
+offset_top = -16.0
+offset_right = 1216.0
+offset_bottom = 673.0
 metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1742732268]

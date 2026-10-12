@@ -21,7 +21,8 @@ Messenger="*uid://tu14cpxutfpv"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/mode=2
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [file_customization]
