@@ -7,6 +7,7 @@ class_name Enemy
 @export var animations: AnimatedSprite2D
 @export var hitbox: Area2D
 
+
 @export var colour_chance: int = 4
 
 var colours: Array = ["colour1", "colour2", "colour3", "colour4"]
@@ -24,7 +25,6 @@ func _ready() -> void:
 	player = Messenger.player
 	Messenger.connect("damage_to_enemy", _on_damaged)
 	animations.connect("animation_finished", _on_death_finished)
-
 
 func _physics_process(_delta: float) -> void:
 	check_dead()

@@ -27,13 +27,14 @@ fill = 1
 fill_from = Vector2(0.4722222, 0.50641024)
 fill_to = Vector2(0.8418803, 0.23717949)
 
-[node name="BulletBlue" type="CharacterBody2D" unique_id=1838346968 groups=["player_projectiles"]]
+[node name="BulletBlue" type="CharacterBody2D" unique_id=1838346968 node_paths=PackedStringArray("screen_notifier") groups=["player_projectiles"]]
 z_index = 2
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_or75j")
 frequency = 5.0
+screen_notifier = NodePath("VisibleOnScreenNotifier2D")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=537784310]
 texture_filter = 1
@@ -87,3 +88,5 @@ texture = ExtResource("2_vwar3")
 [node name="AreaLight" type="PointLight2D" parent="Effects" unique_id=787499222]
 texture = SubResource("GradientTexture2D_x244a")
 texture_scale = 0.6
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1670137646]
